@@ -20,7 +20,7 @@ const GridExamplesPage = () => {
 const ButtonPage = () => {
     return (
         <Fragment>
-            <MDBBtn color="primary" className="float-right">signIn/login</MDBBtn>
+            <MDBBtn color="secondary" >Sign in/login</MDBBtn>
         </Fragment>
     );
 };
