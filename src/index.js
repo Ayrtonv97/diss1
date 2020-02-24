@@ -1,15 +1,11 @@
-import React, {Fragment, Component} from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBNavbar,
-    MDBNavbarBrand,
-    MDBNavbarNav,
-    MDBNavItem,
-    MDBNavLink,
-    MDBNavbarToggler,
-    MDBCollapse} from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import './App.css'; //Import here your file styles
-import { BrowserRouter as Router } from 'react-router-dom';
+
+
 const GridExamplesPage = () => {
     return (
         <MDBContainer>
@@ -19,10 +15,12 @@ const GridExamplesPage = () => {
         </MDBContainer>
     );
 };
+
+
 const ButtonPage = () => {
     return (
         <Fragment>
-            <MDBBtn color="primary" >Sign in/login</MDBBtn>
+            <MDBBtn color="primary" className="float-right">signIn/login</MDBBtn>
         </Fragment>
     );
 };
@@ -43,5 +41,5 @@ ReactDOM.render(<div> < GridExamplesPage/> < ButtonPage/> <Activity/> </div>, do
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-
 serviceWorker.unregister();
+
