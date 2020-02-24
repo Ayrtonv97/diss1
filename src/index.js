@@ -25,7 +25,19 @@ const ButtonPage = () => {
     );
 };
 
-ReactDOM.render(<div> < GridExamplesPage/>, < ButtonPage/> </div>, document.getElementById('root'));
+const Activity= () => {
+    return (
+        <select className="4">
+            <option>Choose activity</option>
+            <option value="1"> Running</option>
+            <option value="2"> Walking</option>
+            <option value="3"> Cycling</option>
+        </select>
+    );
+};
+
+ReactDOM.render(<div> < GridExamplesPage/> < ButtonPage/> <Activity/> </div>, document.getElementById('root'));
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
