@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import styles from './select.module.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarNav,
@@ -15,8 +16,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 class HamburgerMenuPage extends Component {
     state = {
-        collapseID: '',
-        memes: 'swagging'
+        collapseID: ''
 
     };
 
@@ -31,12 +31,11 @@ class HamburgerMenuPage extends Component {
             <Router>
                 <MDBContainer>
                     <MDBNavbar
-                        color='light-blue lighten-4'
-                        style={{ marginTop: '20px' }}
+                        style={{ marginTop: '5px' }}
                         light
                     >
                         <MDBContainer>
-                            <MDBNavbarBrand>{this.state.memes}</MDBNavbarBrand>
+                            <MDBNavbarBrand>Food Equator</MDBNavbarBrand>
                             <MDBNavbarToggler
                                 onClick={this.toggleCollapse('navbarCollapse1')}
                             />
@@ -47,13 +46,13 @@ class HamburgerMenuPage extends Component {
                             >
                                 <MDBNavbarNav left>
                                     <MDBNavItem active>
-                                        <MDBNavLink to='#!'>{this.state.memes}</MDBNavLink>
+                                        <MDBNavLink to='#!'>Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to='#!'>{this.state.memes}</MDBNavLink>
+                                        <MDBNavLink to='#!'>Activity</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to='#!'>{this.state.memes}</MDBNavLink>
+                                        <MDBNavLink to='#!'>Sign in/ Login</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
@@ -62,13 +61,6 @@ class HamburgerMenuPage extends Component {
                 </MDBContainer>
             </Router>
         );
-    }
-}
-
-class HamburgerMenuPage2 extends HamburgerMenuPage {
-
-    render() {
-        return super.render();
     }
 }
 
@@ -86,14 +78,14 @@ const GridExamplesPage = () => {
 const ButtonPage = () => {
     return (
         <Fragment>
-            <MDBBtn color="primary" className="float-right">signIn/login</MDBBtn>
+            <MDBBtn color="primary">signIn/login</MDBBtn>
         </Fragment>
     );
 };
 
 const Activity= () => {
     return (
-        <select className="4">
+        <select className={styles.activity}>
             <option>Choose activity</option>
             <option value="1"> Running</option>
             <option value="2"> Walking</option>
@@ -101,8 +93,17 @@ const Activity= () => {
         </select>
     );
 };
+const Food= () => {
+    return(
+        <select className={styles.Food}>
+            <option>Choose Food</option>
+            <option value="1">Apple</option>
+            <option value="2"></option>
+        </select>
+    )
+}
 
-ReactDOM.render(<div> < HamburgerMenuPage/> < HamburgerMenuPage2/>  < GridExamplesPage/> < ButtonPage/> <Activity/> </div>, document.getElementById('root'));
+ReactDOM.render(<div> < HamburgerMenuPage/> < GridExamplesPage/> < ButtonPage/> <Activity/> </div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
