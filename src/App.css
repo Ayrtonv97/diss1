@@ -29,3 +29,20 @@ body {
   position: absolute;
   right: 30px;
 }
+.tab {
+  overflow: hidden;
+}
+.tab button {
+  background-color: inherit;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  width: 30%;
+}
+.tablinks:hover {
+  background-color: #33cc33;
+}
+.tablinks2:hover {
+  background-color: #3366ff;
+}
