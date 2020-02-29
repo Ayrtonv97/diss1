@@ -89,24 +89,6 @@ const Food= () => {
         </select>
     );
 }
-    function Tabs(){
-        return(
-            <div>
-            <h1>Tabs Demo</h1>
-            <Tabs>
-            <div label="Gator">
-            See ya later, <em>Alligator</em>!
-    </div>
-    <div label="Croc">
-        After &apos;while, <em>Crocodile</em>!
-    </div>
-    <div label="Sarcosuchus">
-        Nothing to see here, this tab is <em>extinct</em>!
-        </div>
-    </Tabs>
-</div>
-    );
-}
 
 class TabContent extends Component {
     render() {
@@ -119,7 +101,7 @@ class TabContent extends Component {
     }
 }
 
-ReactDOM.render(<div> <HamburgerMenuPage/> <Tabs/> < ButtonPage/> <Activity/> <TabContent/> </div>, document.getElementById('root'));
+ReactDOM.render(<div> <HamburgerMenuPage/> < ButtonPage/> <Activity/> <TabContent/> </div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
