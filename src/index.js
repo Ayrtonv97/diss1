@@ -14,6 +14,7 @@ import './App.css'; //Import here your file styles
 import { BrowserRouter as Router } from 'react-router-dom';
 import glamorous from "glamorous";
 import Tabs from "./Tabs";
+import {padding} from "glamor/utils";
 
 
 class HamburgerMenuPage extends Component {
@@ -70,15 +71,27 @@ const ChangeTabs = () => (
             activeTab={{id: "tab1"}}>
             <Tabs.Tab id="tab1" title="Tab 1">
                 <p> This is Tab 1</p>
-                <select className= {styles.activity}>
+                <select className= {styles.activity} style={{padding: 25 + 'px' + 40 + 'px'}}>
                     <option>Choose activity</option>
                     <option value="1"> Running</option>
                     <option value="2"> Walking</option>
                     <option value="3"> Cycling</option>
                 </select>
+                <select className= {styles.activity} style={{padding: 45 + 'px' + 20 + 'px'}}>
+                    <option>Choose activity</option>
+                    <option value="1"> Running</option>
+                    <option value="2"> Walking</option>
+                    <option value="3"> Cycling</option>
+                </select>
+
             </Tabs.Tab>
             <Tabs.Tab id="tab2" title="Tab 2">
-                <div padding={20}>This is tab 2</div>
+                <select className= {styles.activity} style={{padding: 45 + 'px' + 20 + 'px'}}>
+                    <option>Choose activity</option>
+                    <option value="1"> Running</option>
+                    <option value="2"> Walking</option>
+                    <option value="3"> Cycling</option>
+                </select>
             </Tabs.Tab>
         </Tabs>
     </div>
