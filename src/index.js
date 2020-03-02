@@ -12,6 +12,9 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBNavbar,
     MDBCollapse } from "mdbreact";
 import './App.css'; //Import here your file styles
 import { BrowserRouter as Router } from 'react-router-dom';
+import glamorous from "glamorous";
+import Tabs from "./Tabs";
+
 
 class HamburgerMenuPage extends Component {
     constructor(props) {
@@ -29,7 +32,6 @@ class HamburgerMenuPage extends Component {
     }
 
     render() {
-        const container = {height: 500}
         return(
             <div>
             <Router>
@@ -52,6 +54,7 @@ class HamburgerMenuPage extends Component {
                                 </MDBNavItem>
                             </MDBNavbarNav>
                         </MDBCollapse>
+
                     </MDBNavbar>
                 </header>
             </Router>
@@ -61,6 +64,25 @@ class HamburgerMenuPage extends Component {
 }
 
 
+const ChangeTabs = () => (
+    <div style={styles}>
+        <Tabs
+            activeTab={{id: "tab1"}}>
+            <Tabs.Tab id="tab1" title="Tab 1">
+                <p> This is Tab 1</p>
+                <select className= {styles.activity}>
+                    <option>Choose activity</option>
+                    <option value="1"> Running</option>
+                    <option value="2"> Walking</option>
+                    <option value="3"> Cycling</option>
+                </select>
+            </Tabs.Tab>
+            <Tabs.Tab id="tab2" title="Tab 2">
+                <div padding={20}>This is tab 2</div>
+            </Tabs.Tab>
+        </Tabs>
+    </div>
+);
 
 const ButtonPage = () => {
     return (
@@ -70,16 +92,6 @@ const ButtonPage = () => {
     );
 };
 
-const Activity= () => {
-    return (
-        <select className={styles.activity}>
-            <option>Choose activity</option>
-            <option value="1"> Running</option>
-            <option value="2"> Walking</option>
-            <option value="3"> Cycling</option>
-        </select>
-    );
-};
 const Food= () => {
     return(
         <select className={styles.Food}>
@@ -88,20 +100,9 @@ const Food= () => {
             <option value="2"></option>
         </select>
     );
-}
+};
 
-class TabContent extends Component {
-    render() {
-        return (
-            <div id="firstTab" className="tabcontent">
-                <h3> Activity </h3>
-                <p>Enter what activity you would like to do from the consumption of food you have consumed.</p>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(<div> <HamburgerMenuPage/> < ButtonPage/> <Activity/> <TabContent/> </div>, document.getElementById('root'));
+ReactDOM.render(<div> <HamburgerMenuPage/> < ButtonPage/> <ChangeTabs/> </div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

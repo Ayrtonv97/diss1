@@ -7,6 +7,9 @@ body {
   height: 90%;
   background-color: #4d4d4d;
   text-align: center;
+  font-family: Arial;
+  font-size: 15px;
+  color: ghostwhite;
 }
 
 body {
@@ -18,11 +21,6 @@ body {
 /*
  * Title and Login
  */
-.col-md-11{
-  padding: 1rem;
-  color: #fff;
-  font-size: 45px
-}
 .btn{
   font-size:30px;
   padding: 12px 28px;
@@ -31,8 +29,10 @@ body {
 }
 .tab {
   overflow: hidden;
+  width: 30%;
+  background-color: #f1f1f1;
 }
-.tab button {
+.tabs {
   background-color: inherit;
   outline: none;
   cursor: pointer;
@@ -40,9 +40,4 @@ body {
   transition: 0.3s;
   width: 30%;
 }
-.tablinks:hover {
-  background-color: #33cc33;
-}
-.tablinks2:hover {
-  background-color: #3366ff;
-}
+
