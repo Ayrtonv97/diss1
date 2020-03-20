@@ -5,11 +5,10 @@ import Tab from "./Tab";
 
 
 /***
- * https://medium.com/dailyjs/how-to-create-react-tabs-using-contextapi-932c7bec35c7 was done for the tab serction of this file.
+ * https://medium.com/dailyjs/how-to-create-react-tabs-using-contextapi-932c7bec35c7 was done for the tab section of this file.
  * @type {GlamorousComponent<React.HTMLProps<HTMLUListElement>, object>}
  */
 const ListTabs = glamorous.ul({
-    paddingLeft: 0,
     listStyle: "none",
     margin: 0
 });
@@ -45,7 +44,7 @@ const ActiveTabBorder = glamorous.div(
         position: "absolute",
         bottom: 5,
         transition: "all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-        willChange: "left, width"
+        willChange: "centre, width"
     },
     props => {
         return (
