@@ -9,9 +9,10 @@ import './App.css'; //Import here your file styles
 import glamorous from "glamorous";
 import Tabs from "./Tabs";
 import {padding} from "glamor/utils";
+import ActivityForm from "./activityForm";
 
 
-ReactDOM.render(<div> <Navigation/> <ChangeTabs/> </div>, document.getElementById('root'));
+ReactDOM.render(<div> <Navigation/> <ActivityForm/> </div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
