@@ -2,29 +2,63 @@ import styles from "./select.module.css";
 import Tabs from "./Tabs";
 import React from "react";
 
-const ChangeTabs = () => (
+class ChangeTabs extends React.Component {
+
+    constructor(props) {
+    super(props);
+    this.state = {
+        activity: "",
+        food: ""
+    };
+}
+activityChange = (event) => {
+    this.setState({
+        activity: event.target.value
+    });
+}
+foodChange = (event => {
+    this.setState({
+        food: event.target.value
+    });
+});
+render(){
+    let msg = '';
+
+    if (this.state.activity && this.state.food){
+        msg = this.state.food + " calories. Selected exercise will burn: " + this.state.activity + " calories ";
+    }else{
+        msg = '';
+    }
+    return (
     <div style={styles}>
         <Tabs
             activeTab={{id: "tab1"}}>
             <Tabs.Tab id="tab1" title="Calculate Duration of Activity">
-                <p>Enter what activity you want to perform and what food you want to burn off</p>
-                <select className={styles.activity}
-                        style={{padding: 25 + 'px' + 40 + 'px'}}
-                        onChange={getValues()}
-                >
-                    <option>Choose activity</option>
-                    <option value="running">Running</option>
-                    <option value="walking">Walking</option>
-                    <option value="cycling">Cycling</option>
-                </select>
-                <select className={styles.food}
-                        style={{padding: 25 + 'px' + 40 + 'px'}}
-                        onChange={getValues()}
-                >
-                    <option>Choose Food</option>
-                    <option value="apple">Apple</option>
-                    <option value="bootyhole">ass</option>
-                </select>
+                <form>
+                    <select className={styles.food}
+                            style={{padding: 25 + 'px' + 40 + 'px'}}
+                            name={"food"}
+                            onChange={this.foodChange}
+                    >
+                        <option value="">Choose Food</option>
+                        <option value="is 500">Apple</option>
+                        <option value="is 1000">ass</option>
+                    </select>
+
+                    <select className={styles.activity}
+                            style={{padding: 25 + 'px' + 40 + 'px'}}
+                            name="activity"
+                            onChange={this.activityChange}
+                    >
+                        <option value="">Choose activity</option>
+                        <option value="400">Running</option>
+                        <option value="200">Walking</option>
+                        <option value="500">Cycling</option>
+                    </select>
+
+                    <br/>
+                    {msg}
+                </form>
 
             </Tabs.Tab>
 
@@ -38,7 +72,7 @@ const ChangeTabs = () => (
             </Tabs.Tab>
         </Tabs>
     </div>
-);
+)}};
 
 function getValues(eve){
     //let activity = document.getElementsByTagName("select")[0].value;
