@@ -17,6 +17,7 @@ activityChange = (event) => {
     });
 }
 foodChange = (event => {
+    console.log("Current food :", this.state.food);
     this.setState({
         food: event.target.value
     });
@@ -33,7 +34,7 @@ render(){
     <div style={styles}>
         <Tabs
             activeTab={{id: "tab1"}}>
-            <Tabs.Tab id="tab1" title="Calculate Duration of Activity">
+            {/*<Tabs.Tab id="tab1" title="Calculate Duration of Activity">*/}
                 <form>
                     <select className={styles.food}
                             style={{padding: 25 + 'px' + 40 + 'px'}}
@@ -60,16 +61,16 @@ render(){
                     {msg}
                 </form>
 
-            </Tabs.Tab>
+            {/*</Tabs.Tab>*/}
 
-            <Tabs.Tab id="tab2" title="Calculate what food you need to eat to meet calorie requirement">
-                <select className= {styles.activity} style={{padding: 45 + 'px' + 20 + 'px'}}>
-                    <option>Choose activity</option>
-                    <option value="1"> Running</option>
-                    <option value="2"> Walking</option>
-                    <option value="3"> Cycling</option>
-                </select>
-            </Tabs.Tab>
+            {/*<Tabs.Tab id="tab2" title="Calculate what food you need to eat to meet calorie requirement">*/}
+            {/*    <select className= {styles.activity} style={{padding: 45 + 'px' + 20 + 'px'}}>*/}
+            {/*        <option>Choose activity</option>*/}
+            {/*        <option value="1"> Running</option>*/}
+            {/*        <option value="2"> Walking</option>*/}
+            {/*        <option value="3"> Cycling</option>*/}
+            {/*    </select>*/}
+            {/*</Tabs.Tab>*/}
         </Tabs>
     </div>
 )}};

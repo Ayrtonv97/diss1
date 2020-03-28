@@ -64,7 +64,7 @@ const TabAnchorItem = glamorous.a({
 
 const TabsContainer = glamorous.div({
     position: "relative",
-    borderBottom: "2px solid #dfdfdf"
+    // borderBottom: "2px solid #dfdfdf"
 });
 
 const ReactTabs = glamorous.div({

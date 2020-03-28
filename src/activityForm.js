@@ -13,7 +13,7 @@ class ActivityForm extends React.Component{
         this.setState({
             activity: event.target.value
         });
-    }
+    };
     foodChange = (event => {
         this.setState({
             food: event.target.value
