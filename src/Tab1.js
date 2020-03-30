@@ -35,6 +35,8 @@ function a11yProps(index) {
 const StyledTabs = withStyles({
         indicator: {
         display: 'flex',
+        position: 'relative',
+        right: 600,
         justifyContent: 'center',
         backgroundColor: 'transparent',
         '& > div': {
@@ -86,7 +88,7 @@ const useStyles = makeStyles(theme => ({
                     <Tab label="Item Two" {...a11yProps(1)} />
                     <Tab label="Item Three" {...a11yProps(2)} />
                 </StyledTabs>
-            </TabsContainer>
+                </TabsContainer>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={value}
