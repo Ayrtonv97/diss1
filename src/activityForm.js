@@ -31,7 +31,6 @@ class ActivityForm extends React.Component{
         return(
             <form>
                 <select className={styles.food}
-                        style={{padding: 25 + 'px' + 40 + 'px'}}
                         name={"food"}
                         onChange={this.foodChange}
                 >
@@ -41,7 +40,6 @@ class ActivityForm extends React.Component{
                 </select>
 
                 <select className={styles.activity}
-                        style={{padding: 25 + 'px' + 40 + 'px'}}
                         name="activity"
                         onChange={this.activityChange}
                 >

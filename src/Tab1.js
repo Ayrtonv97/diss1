@@ -2,15 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import {makeStyles, useTheme, withStyles} from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import glamorous from "glamorous";
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import styles from "./select.module.css";
-import ChangeTabs from "./changeTab";
 import ActivityForm from "./activityForm";
+import glamorous from "glamorous";
 
 function TabPanel(props) {
     const {children, value, index,} = props;
@@ -36,12 +33,12 @@ function a11yProps(index) {
 }
 
 const StyledTabs = withStyles({
-    indicator: {
+        indicator: {
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: 'transparent',
         '& > div': {
-            maxWidth: 120,
+            maxWidth: 600,
             width: '100%',
             backgroundColor: '#635ee7',
         },
@@ -50,23 +47,10 @@ const StyledTabs = withStyles({
 
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        width: 500,
-    },
     padding: {
         padding: theme.spacing(3),
     }
 }));
-
-const ReactTabs = glamorous.div({
-    position: "absolute",
-    right: 400,
-});
-
-const TabsContainer = glamorous.div({
-    position: "fixed",
-    borderBottom: "2px solid #dfdfdf"
-});
 
     export default function FullWidthTabs() {
     const classes = useStyles();
@@ -82,35 +66,36 @@ const TabsContainer = glamorous.div({
         console.log("handleChangeIndex Method Triggered");
         setValue(index);
     };
-
-        function changeFood() {
-            return ;
-        }
-
-        let msg = 'fuck';
-        let newMsg = 'shit';
+        const TabsContainer = glamorous.div({
+            position: "relative",
+            left: 400,
+            // borderBottom: "2px solid #dfdfdf"
+        });
 
         return (
 
             <div className={classes.root}>
+                <TabsContainer>
                 <StyledTabs
                     value={value}
                     onChange={handleChange}
                     indicatorColor="primary"
-                    variant="fullWidth"
                     aria-label="full width tabs example"
                 >
                     <Tab label="Item One" {...a11yProps(0)} />
                     <Tab label="Item Two" {...a11yProps(1)} />
                     <Tab label="Item Three" {...a11yProps(2)} />
                 </StyledTabs>
+            </TabsContainer>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={value}
                     onChangeIndex={handleChangeIndex}
                 >
                     <TabPanel value={value} index={0} dir={theme.direction}>
-                        <ActivityForm></ActivityForm>
+                        <ActivityForm>
+
+                        </ActivityForm>
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
                         Item Two
