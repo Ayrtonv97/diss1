@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ActivityForm from "./activityForm";
+import WhatToEat from "./whatToEat";
 import glamorous from "glamorous";
 
 function TabPanel(props) {
@@ -35,12 +36,10 @@ function a11yProps(index) {
 const StyledTabs = withStyles({
         indicator: {
         display: 'flex',
-        position: 'relative',
-        right: 600,
         justifyContent: 'center',
         backgroundColor: 'transparent',
         '& > div': {
-            maxWidth: 600,
+            maxWidth: 100,
             width: '100%',
             backgroundColor: '#635ee7',
         },
@@ -70,7 +69,7 @@ const useStyles = makeStyles(theme => ({
     };
         const TabsContainer = glamorous.div({
             position: "relative",
-            left: 400,
+            left: 500
             // borderBottom: "2px solid #dfdfdf"
         });
 
@@ -84,9 +83,9 @@ const useStyles = makeStyles(theme => ({
                     indicatorColor="primary"
                     aria-label="full width tabs example"
                 >
-                    <Tab label="Item One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
+                    <Tab label="Find out how many kcals burnt after activity" {...a11yProps(0)} />
+                    <Tab label="Find out what to eat after activity" {...a11yProps(1)} />
+                    <Tab label="Find out what to eat from targeted activity" {...a11yProps(2)} />
                 </StyledTabs>
                 </TabsContainer>
                 <SwipeableViews
@@ -100,7 +99,9 @@ const useStyles = makeStyles(theme => ({
                         </ActivityForm>
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
-                        Item Two
+                        <WhatToEat>
+
+                        </WhatToEat>
                     </TabPanel>
                     <TabPanel value={value} index={2} dir={theme.direction}>
                         Item Three

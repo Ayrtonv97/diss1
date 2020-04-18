@@ -6,7 +6,7 @@ class ActivityForm extends React.Component{
         super(props);
         this.state = {
             activity: "",
-            food: ""
+            duration: ""
         };
     }
     activityChange = (event) => {
@@ -14,16 +14,64 @@ class ActivityForm extends React.Component{
             activity: event.target.value
         });
     };
-    foodChange = (event => {
+    durationChange = (event => {
         this.setState({
-            food: event.target.value
+            duration: event.target.value
         });
     });
     render(){
         let msg = '';
 
-        if (this.state.activity && this.state.food){
-            msg = this.state.food + " calories. Selected exercise will burn: " + this.state.activity + " calories ";
+        const runningDurationCaloriesMap = {
+            15: 'fuck',
+            30: 350,
+            45: 600,
+            60: 2000
+        };
+
+        const walkingDurationCaloriesMap = {
+            15: 'fuck',
+            30: 350,
+            45: 600,
+            60: 2000
+        };
+
+        const cyclingDurationCaloriesMap = {
+            15: 'fuck',
+            30: 350,
+            45: 600,
+            60: 2000
+        };
+
+        const foodCaloriesMap = {
+            'Mars Bar': 250,
+            'Apple': 50,
+            'Halo Top': 350
+        };
+
+        //Make choice of activity + duration...
+        //Retrieve the calories amount (exercise calories)
+
+        //Make choice of food...
+        //Retrieve calories amount (food calories)
+
+        //Do whatever calculation u want with these calories... (exercise calories) - (food calories) = ?
+
+        if (this.state.activity && this.state.duration){
+
+            if(this.state.activity === 'running'){
+                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + runningDurationCaloriesMap[this.state.duration] ;
+            }
+
+            if(this.state.activity === 'walking'){
+                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + walkingDurationCaloriesMap[this.state.duration] ;
+            }
+
+            if(this.state.activity === 'cycling'){
+                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + cyclingDurationCaloriesMap[this.state.duration] ;
+            }
+
+
         }else{
             msg = '';
         }
@@ -31,22 +79,25 @@ class ActivityForm extends React.Component{
         return(
             <form>
                 <select className={styles.food}
-                        name={"food"}
-                        onChange={this.foodChange}
+                        name="food"
+                        onChange={this.activityChange}
                 >
-                    <option value="">Choose Food</option>
-                    <option value="is_500">Apple</option>
-                    <option value="is_1000">ass</option>
+                    <option value="">Choose Activity</option>
+                    <option value="running">Running</option>
+                    <option value="walking">Walking</option>
+                    <option value="cycling">Cycling</option>
+                    <option value="swimming">Swimming</option>
                 </select>
 
                 <select className={styles.activity}
                         name="activity"
-                        onChange={this.activityChange}
+                        onChange={this.durationChange}
                 >
-                    <option value="">Choose activity</option>
-                    <option value="400">Running</option>
-                    <option value="200">Walking</option>
-                    <option value="500">Cycling</option>
+                    <option value="">Choose duration of activity</option>
+                    <option value="15">15 mins</option>
+                    <option value="30">30 mins</option>
+                    <option value="45">45 mins</option>
+                    <option value="60">60 mins</option>
                 </select>
 
                 <br/>
