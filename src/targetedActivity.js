@@ -1,26 +1,28 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 
-const useStyles = makeStyles((theme) => ({
-    margin: {
-        margin: theme.spacing(1),
-    },
-}));
+class TargetedActivity extends React.Component{
 
-const classes = useStyles();
+    render() {
+    /*
+        const useStyles = makeStyles((theme) => ({
+        root: {
+            '& > *': {
+                margin: theme.spacing(1),
+                width: '25ch',
+            },
+        },
+    }));
+    */
+    return (
+        <form className='targetedActivity' noValidate autoComplete="off">
+            <TextField id="standard-basic" label="Standard" />
+            <TextField id="filled-basic" label="Filled" variant="filled" />
+            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        </form>
+    );
+};
+}
 
-return(
-<div className={classes.margin}>
-    <Grid container spacing={1} alignItems="flex-end">
-        <Grid item>
-            <AccountCircle/>
-        </Grid>
-        <Grid item>
-            <TextField id="input-with-icon-grid" label="With a grid" />
-        </Grid>
-    </Grid>
-</div>
-);
+export default TargetedActivity;

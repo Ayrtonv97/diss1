@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ActivityForm from "./activityForm";
 import WhatToEat from "./whatToEat";
+import TargetedActivity from "./targetedActivity";
 import glamorous from "glamorous";
 
 function TabPanel(props) {
@@ -104,7 +105,9 @@ const useStyles = makeStyles(theme => ({
                         </WhatToEat>
                     </TabPanel>
                     <TabPanel value={value} index={2} dir={theme.direction}>
-                        Item Three
+                        <TargetedActivity>
+
+                        </TargetedActivity>
                     </TabPanel>
                 </SwipeableViews>
             </div>
