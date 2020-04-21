@@ -7,6 +7,7 @@ import ChangeTabs from './changeTab';
 import Tab1 from './Tab1';
 import styles from './select.module.css';
 import './App.css'; //Import here your file styles
+import Icon from './Icon';
 import glamorous from "glamorous";
 import Tabs from "./Tabs";
 import {padding} from "glamor/utils";

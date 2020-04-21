@@ -1,28 +1,23 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-class TargetedActivity extends React.Component{
+class TargetedActivity extends React.Component {
 
     render() {
-    /*
-        const useStyles = makeStyles((theme) => ({
-        root: {
-            '& > *': {
-                margin: theme.spacing(1),
-                width: '25ch',
-            },
-        },
-    }));
-    */
-    return (
-        <form className='targetedActivity' noValidate autoComplete="off">
-            <TextField id="standard-basic" label="Standard" />
-            <TextField id="filled-basic" label="Filled" variant="filled" />
-            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        </form>
-    );
-};
-}
 
+        return (
+            <form className='targetedActivity' noValidate autoComplete="off">
+                <TextField id="standard-basic" label="Targeted Kcal"/>
+                <RadioGroup name="gender1">
+                    <FormControlLabel value="Mars Bar" control={<Radio/>} label="Female"/>
+                    <FormControlLabel value="Apple" control={<Radio/>} label="Male"/>
+                    <FormControlLabel value="Packet of crisps" control={<Radio/>} label="Other"/>
+                </RadioGroup>
+            </form>
+        );
+    };
+}
 export default TargetedActivity;

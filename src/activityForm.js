@@ -22,26 +22,11 @@ class ActivityForm extends React.Component{
     render(){
         let msg = '';
 
-        const runningDurationCaloriesMap = {
-            15: 'fuck',
-            30: 350,
-            45: 600,
-            60: 2000
-        };
+        const walkingCalsPerMinute = 5
+        const cyclingCalsPerMinute = 15
+        const runningCalsPerMinute = 10
+        const swimmingCalsPerMinute = 20
 
-        const walkingDurationCaloriesMap = {
-            15: 'fuck',
-            30: 350,
-            45: 600,
-            60: 2000
-        };
-
-        const cyclingDurationCaloriesMap = {
-            15: 'fuck',
-            30: 350,
-            45: 600,
-            60: 2000
-        };
 
         const foodCaloriesMap = {
             'Mars Bar': 250,
@@ -60,15 +45,15 @@ class ActivityForm extends React.Component{
         if (this.state.activity && this.state.duration){
 
             if(this.state.activity === 'running'){
-                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + runningDurationCaloriesMap[this.state.duration] ;
+                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + walkingCalsPerMinute * this.state.duration ;
             }
 
             if(this.state.activity === 'walking'){
-                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + walkingDurationCaloriesMap[this.state.duration] ;
+                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + walkingCalsPerMinute * this.state.duration ;
             }
 
             if(this.state.activity === 'cycling'){
-                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + cyclingDurationCaloriesMap[this.state.duration] ;
+                msg = "For " + this.state.duration + " of " + this.state.activity + " you will burn ..." + cyclingCalsPerMinute * this.state.duration;
             }
 
 

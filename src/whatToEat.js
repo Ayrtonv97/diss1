@@ -6,7 +6,8 @@ class WhatToEat extends React.Component{
         super(props);
         this.state = {
             activity: "",
-            timeOfActivity: ""
+            timeOfActivity: "",
+            foodChoice: ""
         };
     }
     activityChange = (event) => {
@@ -14,18 +15,23 @@ class WhatToEat extends React.Component{
             activity: event.target.value
         });
     };
-    timeOfActivityChange = (event => {
+    foodChoiceChange = (event => {
         this.setState({
-            timeOfActivity: event.target.value
+            FoodChoice: event.target.value
         });
     });
     render() {
         let msg = '';
 
-        if (this.state.activity && this.state.timeOfActivity) {
-            msg = this.state.timeOfActivity + " calories. Selected exercise will burn: " + this.state.activity + " calories ";
+        const walkingCalsPerMinute = 5
+        const cyclingCalsPerMinute = 15
+        const runningCalsPerMinute = 10
+        const swimmingCalsPerMinute = 20
+
+        if (this.state.activity && this.state.FoodChoice) {
+                msg = "you'll need to do this exercise for: " + this.state.FoodChoice / this.state.activity + " minutes, to burn off the selected food";
         } else {
-            msg = '';
+           console.log("delete me eventually");
         }
 
         return (
@@ -35,33 +41,23 @@ class WhatToEat extends React.Component{
                         onChange={this.activityChange}
                 >
                     <option value="">Choose Activity</option>
-                    <option value="Apple is 500">Walking</option>
-                    <option value="Banana is_1000">Running</option>
-                    <option value="">Cycling</option>
-                    <option value="">Swimming</option>
-                </select>
-
-                <select className={styles.food}
-                        name="time of activity"
-                        onChange={this.timeOfActivityChange}
-                >
-                    <option value="">Time of activity</option>
-                    <option value="15">15 mins</option>
-                    <option value="30">30 mins</option>
-                    <option value="45">45 mins</option>
-                    <option value="60">60 mins</option>
+                    <option value="5">Walking</option>
+                    <option value="10">Running</option>
+                    <option value="15">Cycling</option>
+                    <option value="20">Swimming</option>
                 </select>
 
                 <select className={styles.food}
                         name="food choice"
-                        onChange={this.foodChoice}
+                        onChange={this.foodChoiceChange}
                 >
                     <option value="">Food Choice</option>
-                    <option value="250 kcal">1 Mars Bar(250 kcal)</option>
-                    <option value="50 kcal">1 Apple(50 kcal)</option>
-                    <option value="125 kcal">1 packet of crisps(125 kcal)</option>
+                    <option value="250">1 Mars Bar(250 kcal)</option>
+                    <option value="50">1 Apple(50 kcal)</option>
+                    <option value="125">1 packet of crisps(125 kcal)</option>
                 </select>
-
+                <br/>
+                {msg}
             </form>
         )
     };
