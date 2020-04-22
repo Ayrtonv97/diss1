@@ -10,6 +10,7 @@ import WhatToEat from "./whatToEat";
 import TargetedActivity from "./targetedActivity";
 import Icon from "./Icon";
 import glamorous from "glamorous";
+import Icon2 from "./Icon2";
 
 function TabPanel(props) {
     const {children, value, index,} = props;
@@ -100,9 +101,9 @@ const useStyles = makeStyles(theme => ({
                         </Icon>
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
-                        <WhatToEat>
+                        <Icon2>
 
-                        </WhatToEat>
+                        </Icon2>
                     </TabPanel>
                     <TabPanel value={value} index={2} dir={theme.direction}>
                         <TargetedActivity>
