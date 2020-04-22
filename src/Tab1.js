@@ -6,7 +6,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import ActivityForm from "./activityForm";
 import WhatToEat from "./whatToEat";
 import TargetedActivity from "./targetedActivity";
 import glamorous from "glamorous";
@@ -95,9 +94,7 @@ const useStyles = makeStyles(theme => ({
                     onChangeIndex={handleChangeIndex}
                 >
                     <TabPanel value={value} index={0} dir={theme.direction}>
-                        <ActivityForm>
 
-                        </ActivityForm>
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
                         <WhatToEat>
