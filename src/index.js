@@ -14,7 +14,7 @@ import {padding} from "glamor/utils";
 import Calculations from "./calculations";
 
 
-ReactDOM.render(<div> <Navigation/> <Icon/> </div>, document.getElementById('root'));
+ReactDOM.render(<div> <Navigation/> <Tab1/> </div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
