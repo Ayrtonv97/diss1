@@ -11,7 +11,6 @@ import Icon from './Icon';
 import glamorous from "glamorous";
 import Tabs from "./Tabs";
 import {padding} from "glamor/utils";
-import Calculations from "./calculations";
 
 
 ReactDOM.render(<div> <Navigation/> <Tab1/> </div>, document.getElementById('root'));

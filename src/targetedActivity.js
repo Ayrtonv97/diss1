@@ -15,53 +15,62 @@ class TargetedActivity extends React.Component {
         };
         this.msg = ""
         this.publish = this.publish.bind(this);
-        this.foodValues =  {"apple": 10, "marsbar": 250, "crisps": 300}
+        this.formPreventDefault = this.formPreventDefault.bind(this);
+        this.foodValues = {"apple": 10, "marsbar": 250, "crisps": 300}
 
     }
 
-
-    onsubmit = (e) => {
+    changeHandle = (e) => {
         this.setState({
             targeted_cal: e.target.value
-        }
-    )
-            this.publish(this.state.targeted_cal, this.state.foodValue, this.state.food);
+        })
+    };
 
 
-    }
+
     onRadioChange = (e) => {
         this.setState({
-            food: e.target.value,
-            foodValue: this.foodValues[e.target.value]
-        },
-    );
+                food: e.target.value,
+                foodValue: this.foodValues[e.target.value]
+            },
+        );
+
 
         this.publish(this.state.targeted_cal, this.foodValues[e.target.value], e.target.value);
 
 
     }
 
+    formPreventDefault(e) {
+        console.log('here');
+        e.preventDefault();
+        this.publish(this.state.targeted_cal, this.state.foodValue, this.state.food);
+    }
+
     publish(targeted_cal, foodValue, food) {
-        this.msg = "You would need to eat: " + targeted_cal / foodValue + " " + food;
-        console.log(targeted_cal, foodValue, food );
+        let result = targeted_cal / foodValue;
+        this.msg = "You would need to eat: " + result.toFixed(1) + " " + food;
+        document.getElementById("message").innerText = this.msg;
+        console.log(targeted_cal, foodValue, food);
 
     }
 
     render() {
         return (
-            <form className='targetedActivity' noValidate autoComplete="off" onSubmit={this.mySubmitHandler}>
+            <form className='targetedActivity' noValidate autoComplete="off" onSubmit={this.formPreventDefault}>
                 <TextField id="standard-basic"
                            name="targeted_cal"
                            label="Targeted Kcal"
                            placeholder="Enter Kcal here"
-                           value={ this.state.targeted_cal }
-                           onChange={ this.onsubmit }
+                           value={this.state.targeted_cal}
+                           onChange={this.changeHandle}
                 />
                 <input
                     type='submit'
+                    name="Check Cal"
                 />
                 <br/>
-                {this.msg}
+                <h3 id="message"> {this.msg}</h3>
                 <RadioGroup name="gender1">
 
                     <FormControlLabel
@@ -69,23 +78,25 @@ class TargetedActivity extends React.Component {
                         control={<Radio/>}
                         label="Mars bar"
                         checked={this.state.food === "marsbar"}
-                        onChange={ this.onRadioChange }
+                        onChange={this.onRadioChange}
                     />
 
                     <FormControlLabel value="apple"
                                       control={<Radio/>}
                                       label="Apple"
                                       checked={this.state.food === "apple"}
-                                      onChange={ this.onRadioChange }
+                                      onChange={this.onRadioChange}
                     />
 
                     <FormControlLabel value="crisps"
                                       control={<Radio/>}
                                       label="Packet of Crisps"
                                       checked={this.state.food === "crisps"}
-                                      onChange={ this.onRadioChange }
+                                      onChange={this.onRadioChange}
                     />
                 </RadioGroup>
             </form>
-        )}};
+        )
+    }
+};
 export default TargetedActivity;
