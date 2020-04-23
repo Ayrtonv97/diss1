@@ -30,7 +30,7 @@ export default function Icon2() {
             switch (activity) {
                 //Walking
                 case 1:
-                    msg = "you'll need to do this exercise for: " +foodChoice / walkingCalsPerMinute + " mins to burn off: " + foodName;
+                    msg = "you'll need to do this exercise for: " + foodChoice / walkingCalsPerMinute + " mins to burn off: " + foodName;
                     break;
                 //Running
                 case 2:
