@@ -45,6 +45,7 @@ class TargetedActivity extends React.Component {
         console.log('here');
         e.preventDefault();
         this.publish(this.state.targeted_cal, this.state.foodValue, this.state.food);
+        //prevents the form from submitting, which reloads the page. And passes in target value and the radio button.
     }
 
     publish(targeted_cal, foodValue, food) {
@@ -52,7 +53,7 @@ class TargetedActivity extends React.Component {
         this.msg = "You would need to eat: " + result.toFixed(1) + " " + food;
         document.getElementById("message").innerText = this.msg;
         console.log(targeted_cal, foodValue, food);
-
+        // grabs the the three values to calculate what food needs to be consumed to 1 decimal place.
     }
 
     render() {
