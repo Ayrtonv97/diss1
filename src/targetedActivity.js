@@ -4,10 +4,26 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
+const style = {
+    background: 'linear-gradient(45deg, #512da8 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    fontSize: 22,
+    height: 48,
+    padding: '0 60px',
+    marginLeft: '20px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+};
+const radio ={
+    left: 300,
+    centre: 100,
+}
+
 class TargetedActivity extends React.Component {
 
     constructor() {
-        super();
+        super("");
         this.state = {
             targeted_cal: '',
             food: '',
@@ -58,8 +74,9 @@ class TargetedActivity extends React.Component {
 
     render() {
         return (
+            <div>
             <form className='targetedActivity' noValidate autoComplete="off" onSubmit={this.formPreventDefault}>
-                <TextField id="standard-basic"
+                <TextField style={style} id="standard-basic"
                            name="targeted_cal"
                            label="Targeted Kcal"
                            placeholder="Enter Kcal here"
@@ -71,10 +88,10 @@ class TargetedActivity extends React.Component {
                     name="Check Cal"
                 />
                 <br/>
-                <h3 id="message"> {this.msg}</h3>
-                <RadioGroup name="gender1">
+                <RadioGroup  name="food items">
 
                     <FormControlLabel
+                        style={radio}
                         value="marsbar"
                         control={<Radio/>}
                         label="Mars bar"
@@ -97,6 +114,8 @@ class TargetedActivity extends React.Component {
                     />
                 </RadioGroup>
             </form>
+                <h3 id="message"> {this.msg}</h3>
+            </div>
         )
     }
 };
