@@ -74,7 +74,10 @@ export default function Icon() {
 
     return (
         <div>
-            <h3> Choose Activity</h3>
+            <h4> This first calculation will provide the calorie expenditure from both of the chosen options </h4>
+            <br/>
+            <br/>
+            <h5> Choose Activity</h5>
             <Button style={style}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
             <Button style={style}
@@ -84,7 +87,8 @@ export default function Icon() {
             <Button style={style}
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
             <br/>
-            <h3> Choose Duration </h3>
+            <br/>
+            <h5> Choose Duration </h5>
             <Button style={style}
                     onClick={() => durationChange(15)}>15 </Button>
             <Button style={style}

@@ -69,27 +69,22 @@ const useStyles = makeStyles(theme => ({
         console.log("handleChangeIndex Method Triggered");
         setValue(index);
     };
-        const TabsContainer = glamorous.div({
-            position: "relative",
-            left: 500
-            // borderBottom: "2px solid #dfdfdf"
-        });
 
         return (
 
             <div className={classes.root}>
-                <TabsContainer>
+
                 <StyledTabs
                     value={value}
                     onChange={handleChange}
                     indicatorColor="primary"
                     aria-label="full width tabs example"
+                    variant="fullWidth"
                 >
                     <Tab label="Find out how many kcals burnt after activity" {...a11yProps(0)} />
                     <Tab label="Find out what to eat after activity" {...a11yProps(1)} />
                     <Tab label="Find out what to eat from targeted activity" {...a11yProps(2)} />
                 </StyledTabs>
-                </TabsContainer>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={value}

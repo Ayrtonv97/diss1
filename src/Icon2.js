@@ -8,6 +8,18 @@ import {makeStyles} from '@material-ui/core/styles';
 
 export default function Icon2() {
 
+    const style = {
+        background: 'linear-gradient(45deg, #512da8 30%, #FF8E53 90%)',
+        borderRadius: 3,
+        border: 0,
+        color: 'white',
+        fontSize: 22,
+        height: 48,
+        padding: '0 60px',
+        marginLeft: '20px',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    };
+
     const walkingCalsPerMinute = 5
     const cyclingCalsPerMinute = 15
     const runningCalsPerMinute = 10
@@ -67,34 +79,40 @@ export default function Icon2() {
 
     return (
         <div>
-            <h3> Choose Activity</h3>
-            <Button variant="contained" size="medium" color="primary"
+            <h4> This first calculation will provide the calorie expenditure from both of the chosen options </h4>
+            <br/>
+
+            <h5>Choose Activity</h5>
+            <Button style={style}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
-            <Button variant="contained" size="medium" color="primary"
+            <Button style={style}
                     onClick={() => activityChange(activityEnum.Cycling)}><MdDirectionsBike/></Button>
-            <Button variant="contained" size="medium" color="primary"
+            <Button style={style}
                     onClick={() => activityChange(activityEnum.Running)}><MdDirectionsRun/></Button>
-            <Button variant="contained" size="medium" color="primary"
+            <Button style={style}
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
             <br/>
-            <Button variant="contained" size="medium" color="primary"
+            <br/>
+            <h5>Choose Food</h5>
+            <Button style={style}
                     onClick={() => foodChoiceChange('Mars Bar', foodCaloriesMap.marsbar)}>
                 Mars Bar
             </Button>
-            <Button variant="contained" size="medium" color="primary"
+            <Button style={style}
                     onClick={() => foodChoiceChange('apple', foodCaloriesMap.apple)}>
                 Apple
             </Button>
-            <Button variant="contained" size="medium" color="primary"
+            <Button style={style}
                     onClick={() => foodChoiceChange('crips',foodCaloriesMap.crisps)}>
                 Packet of Crisps
             </Button>
-            <Button variant="contained" size="medium" color="primary"
+            <Button style={style}
                     onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}>
                 Banana
             </Button>
             <br/>
-            <p id="message">Results go here</p>
+            <br/>
+            <h2 id="message">Results go here</h2>
         </div>
     )
 };
