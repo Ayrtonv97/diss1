@@ -1,6 +1,15 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router} from "react-router-dom";
-import {MDBCollapse, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBNavItem, MDBNavLink} from "mdbreact";
+import {
+    MDBCollapse,
+    MDBContainer,
+    MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarNav,
+    MDBNavbarToggler,
+    MDBNavItem,
+    MDBNavLink
+} from "mdbreact";
 
 class NavigateBar extends Component {
     constructor(props) {
@@ -21,9 +30,8 @@ class NavigateBar extends Component {
         return(
             <div>
                 <Router>
-                    <header>
-                        <MDBNavbar color="black" dark expand="md" >
-                            <MDBNavbarBrand href="/">
+                        <MDBNavbar color="bg-danger" dark expand="md">
+                            <MDBNavbarBrand>
                                 <strong>Food-Equator Calculator</strong>
                             </MDBNavbarBrand>
                             <MDBNavbarToggler onClick={ this.onClick } />
@@ -40,9 +48,7 @@ class NavigateBar extends Component {
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
-
-                        </MDBNavbar>
-                    </header>
+                    </MDBNavbar>
                 </Router>
             </div>
         );
