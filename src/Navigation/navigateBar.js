@@ -30,7 +30,7 @@ class NavigateBar extends Component {
         return(
             <div>
                 <Router>
-                        <MDBNavbar color="bg-danger" dark expand="md">
+                        <MDBNavbar color="#62757f" dark expand="md">
                             <MDBNavbarBrand>
                                 <strong>Food-Equator Calculator</strong>
                             </MDBNavbarBrand>
