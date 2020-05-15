@@ -1,7 +1,6 @@
 import React from "react";
 import {MdDirectionsWalk, MdDirectionsBike, MdDirectionsRun} from 'react-icons/md'
 import {FaSwimmer} from 'react-icons/fa';
-import {IconContext} from "react-icons";
 import Button from '@material-ui/core/Button';
 import styles from './walkingIcon.module.css';
 import {makeStyles} from '@material-ui/core/styles';
@@ -29,12 +28,6 @@ export default function Icon() {
     let msg = ""
     let duration = ""
     let activity = ""
-
-    const foodCaloriesMap = {
-        'Mars Bar': 250,
-        'Apple': 50,
-        'Halo Top': 350
-    };
 
     function checkValues(activity, duration) {
         if (activity && duration) {
@@ -77,7 +70,7 @@ export default function Icon() {
             <h4> This first calculation will provide the calorie expenditure from both of the chosen options </h4>
             <br/>
             <br/>
-            <h5> Choose Activity</h5>
+            <h5> Step 1: Choose Activity</h5>
             <Button style={style}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
             <Button style={style}
@@ -88,7 +81,7 @@ export default function Icon() {
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
             <br/>
             <br/>
-            <h5> Choose Duration </h5>
+            <h5> Step 2: Choose Duration </h5>
             <Button style={style}
                     onClick={() => durationChange(15)}>15 </Button>
             <Button style={style}

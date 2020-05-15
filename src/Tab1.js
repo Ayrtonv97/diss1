@@ -6,10 +6,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import WhatToEat from "./whatToEat";
 import TargetedActivity from "./targetedActivity";
 import Icon from "./Icon";
-import glamorous from "glamorous";
 import Icon2 from "./Icon2";
 
 
@@ -42,9 +40,9 @@ const StyledTabs = withStyles({
         justifyContent: 'center',
         borderBottom: 1,
         backgroundColor: 'transparent',
-        '& > div': {maxWidth: 100,
+        '& > div': {maxWidth: 300,
             width: '100%',
-            backgroundColor: '#635ee7'
+            backgroundColor: '#de0d0d'
         },
     },
 })(props => <Tabs {...props} TabIndicatorProps={{children: <div/>}}/>);

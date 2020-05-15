@@ -5,8 +5,10 @@ import Navigation from './Navigation/navigateBar';
 import * as serviceWorker from './serviceWorker';
 import ChangeTabs from './changeTab';
 import Tab1 from './Tab1';
+import SignIn from './signIn';
 import styles from './select.module.css';
 import './App.css'; //Import here your file styles
+import App from './App'
 import Icon from './Icon';
 import glamorous from "glamorous";
 import Tabs from "./Tabs";
@@ -14,7 +16,7 @@ import {padding} from "glamor/utils";
 import Application from "./fireBaseApp";
 import UserProvider from "./userProvider";
 
-ReactDOM.render(<div> <Navigation/> <UserProvider><Application /></UserProvider> <Tab1/> </div> , document.getElementById('root'));
+ReactDOM.render( <App/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
