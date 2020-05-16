@@ -9,15 +9,17 @@ import {makeStyles} from '@material-ui/core/styles';
 export default function Icon() {
 
         const style = {
-            background: 'linear-gradient(45deg, #512da8 30%, #FF8E53 90%)',
-            borderRadius: 3,
-            border: 0,
+            borderRadius: 2,
             color: 'white',
             fontSize: 22,
             height: 48,
             padding: '0 60px',
             marginLeft: '20px',
             boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            hover: 'red',
+            outlineColor: 'red',
+            outlineWidth: '3px',
+            border: '1px solid'
         };
 
     const walkingCalsPerMinute = 5

@@ -28,8 +28,7 @@ class NavigateBar extends Component {
 
     render() {
         return(
-            <div>
-                        <MDBNavbar color="light-blue lighten-4" dark expand="md">
+                        <MDBNavbar color="bg-danger" dark expand="md">
                             <MDBNavbarBrand>
                                 <strong>Food-Equator Calculator</strong>
                             </MDBNavbarBrand>
@@ -48,7 +47,6 @@ class NavigateBar extends Component {
                                 </MDBNavbarNav>
                             </MDBCollapse>
                     </MDBNavbar>
-            </div>
         );
     }
 }

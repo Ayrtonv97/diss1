@@ -1,9 +1,4 @@
-.walking {
-    margin: 0 75px;
-    font-size: 36px;
-}
-
-.fifteen {
-    margin: 0 75px;
-    font-size: 36px;
+radio{
+    align-items: center;
+    justify-content: center
 }

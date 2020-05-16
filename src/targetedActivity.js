@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import radio from './walkingIcon.module.css';
 
 const style = {
     background: 'linear-gradient(45deg, #512da8 30%, #FF8E53 90%)',
@@ -15,7 +16,7 @@ const style = {
     marginLeft: '20px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 };
-const radio ={
+const mars ={
     left: 300,
     centre: 100,
 }
@@ -91,7 +92,7 @@ class TargetedActivity extends React.Component {
                 <RadioGroup  name="food items">
 
                     <FormControlLabel
-                        style={radio}
+                        className={radio}
                         value="marsbar"
                         control={<Radio/>}
                         label="Mars bar"
