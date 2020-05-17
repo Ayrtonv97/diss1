@@ -6,7 +6,7 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
 
     const style = {
-        background: 'linear-gradient(45deg, #512da8 30%, #FF8E53 90%)',
+        background: 'blue',
         borderRadius: 3,
         border: 0,
         color: 'white',
@@ -32,8 +32,8 @@ const SignIn = () => {
     };
 
     return (
-        <div className="mt-8">
-            <h1 className="">Sign In</h1>
+        <div>
+            <h1>Sign In</h1>
             <div style={sign}>
                 <form className="">
                     <label>
@@ -52,7 +52,6 @@ const SignIn = () => {
                     </label>
                     <input
                         type="password"
-                        className="mt-1 mb-3 p-1 w-full"
                         name="userPassword"
                         value = {password}
                         placeholder="Your Password"

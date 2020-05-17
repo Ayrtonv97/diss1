@@ -39,7 +39,7 @@ class NavigateBar extends Component {
                                         <MDBNavLink to="/">Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to="#">My Log</MDBNavLink>
+                                        <MDBNavLink to="/MyLog">My Log</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
                                         <MDBNavLink to="/SignIn">Sign in</MDBNavLink>

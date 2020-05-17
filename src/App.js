@@ -6,6 +6,7 @@ import Application from "./fireBaseApp";
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import SignIn from "./signIn";
 import Tab1 from "./Tab1";
+import MyLog from "./MyLog";
 
 function App() {
         return (
@@ -15,6 +16,7 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Tab1}/>
                         <Route path="/signIn" component={SignIn}/>
+                        <Route path="/MyLog"  component={MyLog}/>
                     </Switch>
                 </div>
             </Router>

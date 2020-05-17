@@ -19,7 +19,7 @@ export default function Icon() {
             hover: 'red',
             outlineColor: 'red',
             outlineWidth: '3px',
-            border: '1px solid'
+            border: '1px solid',
         };
 
     const walkingCalsPerMinute = 5
@@ -85,15 +85,13 @@ export default function Icon() {
             <br/>
             <h5> Step 2: Choose Duration </h5>
             <Button style={style}
-                    onClick={() => durationChange(15)}>15 </Button>
+                    onClick={() => durationChange(15)}>15 mins</Button>
             <Button style={style}
-                    onClick={() => durationChange(30)}> 30 </Button>
+                    onClick={() => durationChange(30)}>30 mins</Button>
             <Button style={style}
-                    onClick={() => durationChange(45)}> 45 </Button>
+                    onClick={() => durationChange(45)}>45 mins</Button>
             <Button style={style}
-                onClick={() => durationChange(60)}>
-                60
-            </Button>
+                onClick={() => durationChange(60)}>60 mins</Button>
             <br/>
             <p id="message">Results go here</p>
         </div>
