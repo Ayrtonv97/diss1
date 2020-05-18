@@ -35,10 +35,10 @@ export default function Icon2() {
     let activity = ""
 
     const foodCaloriesMap = {
-        'marsbar': 250,
+        'marsbar': 228,
         'apple': 50,
-        'banana': 20,
-        'crisps':350
+        'banana': 105,
+        'crisps':184
     };
 
     function checkValues(activity, foodChoice, foodName) {
@@ -46,21 +46,21 @@ export default function Icon2() {
             switch (activity) {
                 //Walking
                 case 1:
-                    msg = "you'll need to do this exercise for: " + foodChoice / walkingCalsPerMinute + " mins to burn off: " + foodName;
+                    msg = "you'll need to do this exercise for: " + foodChoice / walkingCalsPerMinute + " mins to burn off: 1 " + foodName;
                     break;
                 //Running
                 case 2:
-                    msg = "you'll need to do this exercise for: " + foodChoice / runningCalsPerMinute + " mins to burn off: " + foodName;
+                    msg = "you'll need to do this exercise for: " + foodChoice / runningCalsPerMinute + " mins to burn off: 1 " + foodName;
 
                     break;
                 //Swimming
                 case 3:
-                    msg = "you'll need to do this exercise for: " +foodChoice / swimmingCalsPerMinute + " mins to burn off: " + foodName;
+                    msg = "you'll need to do this exercise for: " +foodChoice / swimmingCalsPerMinute + " mins to burn off: 1 " + foodName;
 
                     break;
                 //Cycling
                 case 4:
-                    msg = "you'll need to do this exercise for: " +foodChoice / cyclingCalsPerMinute + " mins to burn off: " + foodName;
+                    msg = "you'll need to do this exercise for: " +foodChoice / cyclingCalsPerMinute + " mins to burn off: 1 " + foodName;
 
                     break;
                 default:
