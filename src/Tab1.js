@@ -81,8 +81,8 @@ const useStyles = makeStyles(theme => ({
                     variant="fullWidth"
                 >
                     <Tab label="Find out how many kcals burnt after activity" {...a11yProps(0)} />
-                    <Tab label="Find out what to eat after activity" {...a11yProps(1)} />
-                    <Tab label="Find out what to eat from targeted activity" {...a11yProps(2)} />
+                    <Tab label="Find out how long to do an exercise for after eating" {...a11yProps(1)} />
+                    <Tab label="Find out what to eat from your own targeted cal" {...a11yProps(2)} />
                 </StyledTabs>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
