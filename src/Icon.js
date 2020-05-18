@@ -33,9 +33,8 @@ export default function Icon() {
             border: '1px solid',
         }
         const text = {
-            fontFamily: 'Arial',
-            fontStyle: 'normal',
-            fontWeight: 400
+            color: '#eb9500',
+            fontSize: 22
         }
 
     const walkingCalsPerMinute = 4
@@ -85,7 +84,7 @@ export default function Icon() {
 
     return (
         <div>
-            <h4> This first calculation will provide the calorie expenditure from both of the chosen options </h4>
+            <h5 style={text}>This first calculation will provide the calorie expenditure from both of the chosen options </h5>
             <br/>
             <h5> Step 1: Choose Activity</h5>
             <Button style={step1}

@@ -83,7 +83,7 @@ export default function Icon2() {
 
     return (
         <div>
-            <h4> This first calculation will provide the calorie expenditure from both of the chosen options </h4>
+            <h5> This second calculation will provide the duration of the exercise you have to perform, in order to burn off your chosen food </h5>
             <br/>
 
             <h5> Step 1: Choose Activity</h5>
@@ -108,7 +108,7 @@ export default function Icon2() {
                     onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
             <br/>
             <br/>
-            <h2 id="message">Results go here</h2>
+            <h4 id="message">Results go here</h4>
         </div>
     )
 };
