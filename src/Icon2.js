@@ -2,10 +2,7 @@ import React from "react";
 import {MdDirectionsWalk, MdDirectionsBike, MdDirectionsRun} from 'react-icons/md'
 import {FaSwimmer, FaAppleAlt} from 'react-icons/fa';
 import {GiChocolateBar, GiBananaBunch, GiChipsBag} from 'react-icons/gi';
-import {IconContext} from "react-icons";
 import Button from '@material-ui/core/Button';
-import styles from './walkingIcon.module.css';
-
 
 export default function Icon2() {
 
@@ -24,10 +21,10 @@ export default function Icon2() {
         label: 'mars bar'
     };
 
-    const walkingCalsPerMinute = 5
-    const cyclingCalsPerMinute = 15
-    const runningCalsPerMinute = 10
-    const swimmingCalsPerMinute = 20
+    const walkingCalsPerMinute = 4
+    const cyclingCalsPerMinute = 8
+    const runningCalsPerMinute = 11
+    const swimmingCalsPerMinute = 10
     const activityEnum = Object.freeze({"Walking": 1, "Running": 2, "Swimming": 3, "Cycling": 4})
     let msg = ""
     let foodChoice  = ""

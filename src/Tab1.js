@@ -9,6 +9,8 @@ import Box from '@material-ui/core/Box';
 import TargetedActivity from "./targetedActivity";
 import Icon from "./Icon";
 import Icon2 from "./Icon2";
+import AppBar from '@material-ui/core/AppBar';
+import tab from "./nav.css";
 
 
 function TabPanel(props) {
@@ -34,12 +36,18 @@ function a11yProps(index) {
     };
 }
 
+const titleStyle={
+    color: {
+        color:'#f59905'
+    },
+}
+
 const StyledTabs = withStyles({
         indicator: {
         display: 'flex',
         justifyContent: 'center',
         borderBottom: 1,
-        backgroundColor: 'transparent',
+        background: 'transparent',
         '& > div': {maxWidth: 300,
             width: '100%',
             backgroundColor: '#0043fa'
@@ -72,6 +80,7 @@ const useStyles = makeStyles(theme => ({
         return (
 
             <div className={classes.root}>
+                <AppBar style={{ background: '#2E3B55' }} position="static">
 
                 <StyledTabs
                     value={value}
@@ -84,6 +93,7 @@ const useStyles = makeStyles(theme => ({
                     <Tab label="Find out how long to do an exercise for after eating" {...a11yProps(1)} />
                     <Tab label="Find out what to eat from your own targeted cal" {...a11yProps(2)} />
                 </StyledTabs>
+                </AppBar>
                 <SwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={value}

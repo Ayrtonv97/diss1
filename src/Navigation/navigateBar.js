@@ -1,39 +1,30 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import {
-    MDBCollapse,
-    MDBContainer,
-    MDBNavbar,
-    MDBNavbarBrand,
-    MDBNavbarNav,
-    MDBNavbarToggler,
-    MDBNavItem,
-    MDBNavLink
-} from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer,
+    MDBHamburgerToggler } from 'mdbreact';
+import {FaCalculator} from "react-icons/all";
 
 class NavigateBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapse: false
-        };
-        this.onClick = this.onClick.bind(this);
+    state = {
+        collapse1: false,
+        collapseID: ''
     }
 
-    onClick() {
+    toggleSingleCollapse = collapseId => {
         this.setState({
-            collapse: !this.state.collapse,
+            ...this.state,
+            [collapseId]: !this.state[collapseId]
         });
     }
 
     render() {
-        return(
-                        <MDBNavbar color="bg-danger" dark expand="md">
+        return (
+                    <MDBNavbar>
                             <MDBNavbarBrand>
-                                <strong>Food-Equator Calculator</strong>
+                                <FaCalculator/> Food Energy Equator
                             </MDBNavbarBrand>
-                            <MDBNavbarToggler onClick={ this.onClick } />
-                            <MDBCollapse isOpen = { this.state.collapse } navbar>
+                            <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
+                            <MDBCollapse isOpen={this.state.collapse1} navbar>
                                 <MDBNavbarNav left>
                                     <MDBNavItem active>
                                         <MDBNavLink to="/">Home</MDBNavLink>
@@ -42,7 +33,7 @@ class NavigateBar extends Component {
                                         <MDBNavLink to="/MyLog">My Log</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to="/SignIn">Sign in</MDBNavLink>
+                                        <MDBNavLink to="SignIn">Sign In</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
@@ -50,5 +41,6 @@ class NavigateBar extends Component {
         );
     }
 }
+
 
 export default NavigateBar;

@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import radio from './walkingIcon.module.css';
+import radio from './nav.css';
 
 const style = {
     borderRadius: 2,
@@ -15,10 +15,6 @@ const style = {
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     border: '1px solid',
 };
-const mars ={
-    left: 300,
-    centre: 100,
-}
 
 class TargetedActivity extends React.Component {
 
