@@ -36,12 +36,6 @@ function a11yProps(index) {
     };
 }
 
-const titleStyle={
-    color: {
-        color:'#f59905'
-    },
-}
-
 const StyledTabs = withStyles({
         indicator: {
         display: 'flex',
@@ -50,7 +44,7 @@ const StyledTabs = withStyles({
         background: 'transparent',
         '& > div': {maxWidth: 300,
             width: '100%',
-            backgroundColor: '#0043fa'
+            backgroundColor: '#f59905'
         },
     },
 })(props => <Tabs {...props} TabIndicatorProps={{children: <div/>}}/>);
@@ -80,7 +74,7 @@ const useStyles = makeStyles(theme => ({
         return (
 
             <div className={classes.root}>
-                <AppBar style={{ background: '#2E3B55' }} position="static">
+                <AppBar style={{ background: '#8d8d8d', marginTop: '20px' }} position="static">
 
                 <StyledTabs
                     value={value}

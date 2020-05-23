@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer,
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse,
     MDBHamburgerToggler } from 'mdbreact';
 import {FaCalculator} from "react-icons/all";
 
@@ -8,6 +7,10 @@ class NavigateBar extends Component {
     state = {
         collapse1: false,
         collapseID: ''
+    }
+
+    toggleCollapse = collapseID => () => {
+        this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
     }
 
     toggleSingleCollapse = collapseId => {
@@ -33,7 +36,7 @@ class NavigateBar extends Component {
                                         <MDBNavLink to="/MyLog">My Log</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to="SignIn">Sign In</MDBNavLink>
+                                        <MDBNavLink to="/SignIn">Sign In</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>

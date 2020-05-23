@@ -2,39 +2,33 @@ import React from "react";
 import {MdDirectionsWalk, MdDirectionsBike, MdDirectionsRun} from 'react-icons/md'
 import {FaSwimmer} from 'react-icons/fa';
 import Button from '@material-ui/core/Button';
+import {left} from "glamor";
+import {Badge} from 'reactstrap';
 
 
 export default function Icon() {
 
-        const step1 = {
-            borderRadius: 2,
+        const text = {
             color: 'white',
+            fontFamily: 'Arial',
             fontSize: 22,
+            textAlign: 'left',
+
+        }
+
+
+        const step1 = {
+            color: 'indigo',
+            fontSize: 80,
             height: 48,
-            padding: '0 60px',
-            marginLeft: '20px',
-            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-            hover: 'red',
-            outlineColor: 'blue',
-            outlineWidth: '3px',
-            border: '1px solid',
+            marginRight: '200px',
+            text: ''
         };
         const step2 = {
-            borderRadius: 2,
-            color: 'white',
-            fontSize: 18,
+            color: 'indigo',
+            fontSize: 30,
             height: 48,
-            padding: '0 34px',
-            marginLeft: '20px',
-            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-            hover: 'red',
-            outlineColor: 'blue',
-            outlineWidth: '3px',
-            border: '1px solid',
-        }
-        const text = {
-            color: '#eb9500',
-            fontSize: 22
+            marginRight: '400px',
         }
 
     const walkingCalsPerMinute = 4
@@ -84,9 +78,9 @@ export default function Icon() {
 
     return (
         <div>
-            <h5 style={text}>This first calculation will provide the calorie expenditure from both of the chosen options </h5>
             <br/>
-            <h5> Step 1: Choose Activity</h5>
+            <h4 style={text}><Badge color="primary">1</Badge> Choose an activity</h4>
+            <br/>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
             <Button style={step1}
@@ -97,18 +91,18 @@ export default function Icon() {
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
             <br/>
             <br/>
-            <h5> Step 2: Choose Duration </h5>
+            <h5 style={text}><Badge color="primary">2</Badge> Choose Duration </h5>
+            <Button style={text}
+                onClick={() => durationChange(15)}><Badge color="primary">15 mins</Badge></Button>
+            <Button style={text}
+                    onClick={() => durationChange(30)}><Badge color="primary">30 mins</Badge></Button>
+            <Button style={text}
+                    onClick={() => durationChange(45)}><Badge color="primary">45 mins</Badge></Button>
             <Button style={step2}
-                    onClick={() => durationChange(15)}>15 mins</Button>
-            <Button style={step2}
-                    onClick={() => durationChange(30)}>30 mins</Button>
-            <Button style={step2}
-                    onClick={() => durationChange(45)}>45 mins</Button>
-            <Button style={step2}
-                onClick={() => durationChange(60)}>60 mins</Button>
+                    onClick={() => durationChange(60)}><Badge color="primary">60 mins</Badge></Button>
             <br/>
             <br/>
-            <h4 style={text} id="message">Results go here</h4>
+            <h4 style={text} id="message"><Badge color="primary">3</Badge>Results go here</h4>
         </div>
     )
 };
