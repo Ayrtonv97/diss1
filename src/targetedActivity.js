@@ -4,6 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import radio from './nav.css';
+import Button from "@material-ui/core/Button";
 
 const style = {
     borderRadius: 2,
@@ -14,6 +15,7 @@ const style = {
     marginLeft: '20px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     border: '1px solid',
+    textAlign: 'left',
 };
 
 class TargetedActivity extends React.Component {
@@ -28,7 +30,7 @@ class TargetedActivity extends React.Component {
         this.msg = ""
         this.publish = this.publish.bind(this);
         this.formPreventDefault = this.formPreventDefault.bind(this);
-        this.foodValues = {"apple": 10, "marsbar": 250, "crisps": 300}
+        this.foodValues = {"apple": 50, "marsbar": 228, "crisps": 184}
 
     }
 
@@ -84,6 +86,15 @@ class TargetedActivity extends React.Component {
                     name="Check Cal"
                 />
                 <br/>
+
+                <Button style={style}
+                        onClick={() => foodChoiceChange('Mars Bar', foodCaloriesMap.marsbar)}><GiChocolateBar/></Button>
+                <Button style={style}
+                        onClick={() => foodChoiceChange('apple', foodCaloriesMap.apple)}><FaAppleAlt/></Button>
+                <Button style={style}
+                        onClick={() => foodChoiceChange('crisps',foodCaloriesMap.crisps)}><GiChipsBag/></Button>
+                <Button style={style}
+                        onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
                 <RadioGroup className={radio} name="food items">
 
                     <FormControlLabel

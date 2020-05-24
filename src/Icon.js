@@ -11,9 +11,17 @@ export default function Icon() {
         const text = {
             color: 'white',
             fontFamily: 'Arial',
+            fontSize: 38,
+            textAlign: 'left',
+            marginRight: '150px'
+        }
+
+        const text2 = {
+            color: 'white',
+            fontFamily: 'Arial',
             fontSize: 22,
             textAlign: 'left',
-
+            marginRight: '100px'
         }
 
 
@@ -79,7 +87,7 @@ export default function Icon() {
     return (
         <div>
             <br/>
-            <h4 style={text}><Badge color="primary">1</Badge> Choose an activity</h4>
+            <h4 style={text2}><Badge color="primary">1</Badge> Choose an activity</h4>
             <br/>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
@@ -91,18 +99,19 @@ export default function Icon() {
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
             <br/>
             <br/>
-            <h5 style={text}><Badge color="primary">2</Badge> Choose Duration </h5>
+            <h5 style={text2}><Badge color="primary">2</Badge> Choose Duration </h5>
+            <br/>
             <Button style={text}
                 onClick={() => durationChange(15)}><Badge color="primary">15 mins</Badge></Button>
             <Button style={text}
                     onClick={() => durationChange(30)}><Badge color="primary">30 mins</Badge></Button>
             <Button style={text}
                     onClick={() => durationChange(45)}><Badge color="primary">45 mins</Badge></Button>
-            <Button style={step2}
+            <Button style={text}
                     onClick={() => durationChange(60)}><Badge color="primary">60 mins</Badge></Button>
             <br/>
             <br/>
-            <h4 style={text} id="message"><Badge color="primary">3</Badge>Results go here</h4>
+            <h4 style={text2} id="message"><Badge color="primary">3</Badge>Results go here</h4>
         </div>
     )
 };
