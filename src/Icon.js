@@ -29,8 +29,6 @@ export default function Icon() {
             color: 'indigo',
             fontSize: 70,
             marginRight: '200px',
-            justifyContent: 'center',
-            alignItems: 'center'
         };
 
     const walkingCalsPerMinute = 4
