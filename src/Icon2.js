@@ -9,8 +9,7 @@ export default function Icon2() {
 
     const step1 = {
         color: 'indigo',
-        fontSize: 80,
-        height: 48,
+        fontSize: 70,
         marginRight: '200px',
     };
     const step2 = {
@@ -108,7 +107,7 @@ export default function Icon2() {
                     onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
             <br/>
             <br/>
-            <h4 style={text2} id="message"><Badge color="primary">3</Badge>Results go here</h4>
+            <h4 style={text2} id="message"><Badge color="primary">3</Badge> Results go here</h4>
         </div>
     )
 };

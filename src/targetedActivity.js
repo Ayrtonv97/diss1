@@ -22,7 +22,7 @@ const text2 = {
 const step2 = {
     color: 'yellow',
     fontSize: 70,
-    marginRight: '200px',
+    marginRight: '200px'
 }
 
 
@@ -67,7 +67,7 @@ class TargetedActivity extends React.Component {
     render() {
         return (
             <div>
-            <form className='targetedActivity' noValidate autoComplete="off" onSubmit={this.formPreventDefault}>
+            <form className='targetedActivity' noValidate autoComplete="off">
                 <h4 style={text2}><Badge color="primary">1</Badge> Enter Target Calories </h4>
                 <TextField style={style} id="standard-basic"
                            type="text"
@@ -88,7 +88,7 @@ class TargetedActivity extends React.Component {
                 <Button style={step2}
                         onClick={() => this.onRadioChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
             </form>
-                <h4 style={text2} id="message"> {this.msg} <Badge color="primary">3</Badge>Results go here</h4>
+                <h4 style={text2} id="message"> {this.msg} <Badge color="primary">3</Badge> Results go here</h4>
             </div>
         )
     }

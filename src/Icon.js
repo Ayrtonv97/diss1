@@ -2,8 +2,8 @@ import React from "react";
 import {MdDirectionsWalk, MdDirectionsBike, MdDirectionsRun} from 'react-icons/md'
 import {FaSwimmer} from 'react-icons/fa';
 import Button from '@material-ui/core/Button';
-import {left} from "glamor";
 import {Badge} from 'reactstrap';
+import {row} from "glamor/ous";
 
 
 export default function Icon() {
@@ -11,7 +11,7 @@ export default function Icon() {
         const text = {
             color: 'white',
             fontFamily: 'Arial',
-            fontSize: 38,
+            fontSize: 34,
             textAlign: 'left',
             marginRight: '150px'
         }
@@ -27,17 +27,12 @@ export default function Icon() {
 
         const step1 = {
             color: 'indigo',
-            fontSize: 80,
+            fontSize: 70,
+            flexDirection: row,
             height: 48,
             marginRight: '200px',
             text: ''
         };
-        const step2 = {
-            color: 'indigo',
-            fontSize: 30,
-            height: 48,
-            marginRight: '400px',
-        }
 
     const walkingCalsPerMinute = 4
     const cyclingCalsPerMinute = 8
@@ -110,7 +105,7 @@ export default function Icon() {
                     onClick={() => durationChange(60)}><Badge color="primary">60 mins</Badge></Button>
             <br/>
             <br/>
-            <h4 style={text2} id="message"><Badge color="primary">3</Badge>Results go here</h4>
+            <h4 style={text2} id="message"><Badge color="primary">3</Badge> Results go here</h4>
         </div>
     )
 };
