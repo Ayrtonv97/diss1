@@ -3,7 +3,6 @@ import {MdDirectionsWalk, MdDirectionsBike, MdDirectionsRun} from 'react-icons/m
 import {FaSwimmer} from 'react-icons/fa';
 import Button from '@material-ui/core/Button';
 import {Badge} from 'reactstrap';
-import {row} from "glamor/ous";
 
 
 export default function Icon() {
@@ -28,7 +27,6 @@ export default function Icon() {
         const step1 = {
             color: 'indigo',
             fontSize: 70,
-            marginRight: '200px',
         };
 
     const walkingCalsPerMinute = 4
@@ -80,8 +78,8 @@ export default function Icon() {
         <div>
             <h4 style={text2}><Badge color="primary">1</Badge> Choose an activity</h4>
             <br/>
-            <div class="row">
-                <div class="col">
+            <div class='row'>
+                <div class='col'>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
                 </div>
