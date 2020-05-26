@@ -28,10 +28,10 @@ export default function Icon() {
         const step1 = {
             color: 'indigo',
             fontSize: 70,
-            flexDirection: 'row',
-            flex: 1,
+            position: 'relative',
+            overflow: 'hidden',
+            width: '100',
             marginRight: '200px',
-            justifyContent: 'space-between'
         };
 
     const walkingCalsPerMinute = 4
