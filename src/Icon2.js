@@ -10,12 +10,10 @@ export default function Icon2() {
     const step1 = {
         color: 'indigo',
         fontSize: 70,
-        marginRight: '200px',
     };
     const step2 = {
         color: 'yellow',
         fontSize: 70,
-        marginRight: '200px',
     }
     const text2 = {
         color: 'white',
@@ -86,25 +84,45 @@ export default function Icon2() {
         <div>
             <h4 style={text2}><Badge color="primary">1</Badge> Choose Activity</h4>
             <br/>
+            <div class='row'>
+                <div class='col'>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
+                </div>
+                <div class='col'>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Cycling)}><MdDirectionsBike/></Button>
+                </div>
+                <div class='col'>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Running)}><MdDirectionsRun/></Button>
+                </div>
+                <div class='col'>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
+                </div>
+            </div>
             <br/>
             <br/>
             <h4 style={text2}><Badge color="primary">2</Badge> Choose Food</h4>
+            <div class='row'>
+                <div class='col'>
             <Button style={step2}
                     onClick={() => foodChoiceChange('Mars Bar', foodCaloriesMap.marsbar)}><GiChocolateBar/></Button>
+                </div>
+                <div class='col'>
             <Button style={step2}
                     onClick={() => foodChoiceChange('apple', foodCaloriesMap.apple)}><FaAppleAlt/></Button>
+                </div>
+                <div class='col'>
             <Button style={step2}
                     onClick={() => foodChoiceChange('crisps',foodCaloriesMap.crisps)}><GiChipsBag/></Button>
+                </div>
+                <div class='col'>
             <Button style={step2}
                     onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
+                </div>
+            </div>
             <br/>
             <br/>
             <h4 style={text2} id="message"><Badge color="primary">3</Badge> Results go here</h4>

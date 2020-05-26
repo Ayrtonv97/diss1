@@ -11,8 +11,6 @@ export default function Icon() {
             color: 'white',
             fontFamily: 'Arial',
             fontSize: 34,
-            textAlign: 'left',
-            marginRight: '150px'
         }
 
         const text2 = {
@@ -20,9 +18,7 @@ export default function Icon() {
             fontFamily: 'Arial',
             fontSize: 22,
             textAlign: 'left',
-            marginRight: '100px'
         }
-
 
         const step1 = {
             color: 'indigo',
@@ -100,14 +96,24 @@ export default function Icon() {
             <br/>
             <h5 style={text2}><Badge color="primary">2</Badge> Choose Duration </h5>
             <br/>
+            <div class='row'>
+                <div class='col'>
             <Button style={text}
                 onClick={() => durationChange(15)}><Badge color="primary">15 mins</Badge></Button>
+                </div>
+                <div class='col'>
             <Button style={text}
                     onClick={() => durationChange(30)}><Badge color="primary">30 mins</Badge></Button>
+                </div>
+                <div class='col'>
             <Button style={text}
                     onClick={() => durationChange(45)}><Badge color="primary">45 mins</Badge></Button>
+                </div>
+                <div class='col'>
             <Button style={text}
                     onClick={() => durationChange(60)}><Badge color="primary">60 mins</Badge></Button>
+            </div>
+            </div>
             <br/>
             <br/>
             <h4 style={text2} id="message"><Badge color="primary">3</Badge> Results go here</h4>

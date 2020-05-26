@@ -9,8 +9,7 @@ const style = {
     color: 'white',
     fontSize: 17,
     padding: '0 100px',
-    position: 'relative',
-    right: '400px',
+    position: 'absolute',
 };
 const text2 = {
     color: 'white',
@@ -22,7 +21,6 @@ const text2 = {
 const step2 = {
     color: 'yellow',
     fontSize: 70,
-    marginRight: '200px'
 }
 
 
@@ -67,10 +65,11 @@ class TargetedActivity extends React.Component {
     render() {
         return (
             <div>
-            <form className='targetedActivity' noValidate autoComplete="off">
+            <div class='targetedActivity' noValidate autoComplete="off">
                 <h4 style={text2}><Badge color="primary">1</Badge> Enter Target Calories </h4>
                 <TextField style={style} id="standard-basic"
                            type="text"
+                           class="col"
                            label="Targeted Kcal"
                            placeholder="Enter Kcal here"
                            value={this.state.targeted_cal}
@@ -79,15 +78,25 @@ class TargetedActivity extends React.Component {
                 <br/>
                 <br/>
                 <h4 style={text2}><Badge color="primary">2 </Badge> Choose a snack </h4>
+                <div className='row'>
+                    <div class='col'>
                 <Button style={step2}
                         onClick={() => this.onRadioChange('marsbar', this.foodValues.marsbar)}><GiChocolateBar/></Button>
+                    </div>
+                    <div class='col'>
                 <Button style={step2}
                         onClick={() => this.onRadioChange('apple', this.foodValues.apple)}><FaAppleAlt/></Button>
+                    </div>
+                    <div class='col'>
                 <Button style={step2}
                         onClick={() => this.onRadioChange('crisps', this.foodValues.crisps)}><GiChipsBag/></Button>
+                    </div>
+                    <div class='col'>
                 <Button style={step2}
                         onClick={() => this.onRadioChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
-            </form>
+                    </div>
+                </div>
+            </div>
                 <h4 style={text2} id="message"> {this.msg} <Badge color="primary">3</Badge> Results go here</h4>
             </div>
         )
