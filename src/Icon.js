@@ -80,6 +80,7 @@ export default function Icon() {
         <div>
             <h4 style={text2}><Badge color="primary">1</Badge> Choose an activity</h4>
             <br/>
+            <div className="row">
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
             <Button style={step1}
@@ -88,6 +89,7 @@ export default function Icon() {
                     onClick={() => activityChange(activityEnum.Running)}><MdDirectionsRun/></Button>
             <Button style={step1}
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
+                </div>
             <br/>
             <br/>
             <h5 style={text2}><Badge color="primary">2</Badge> Choose Duration </h5>
