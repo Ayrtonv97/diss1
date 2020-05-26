@@ -38,6 +38,9 @@ class NavigateBar extends Component {
                                     <MDBNavItem>
                                         <MDBNavLink to="/SignIn">Sign In</MDBNavLink>
                                     </MDBNavItem>
+                                    <MDBNavItem>
+                                        <MDBNavLink to="/Help">Help</MDBNavLink>
+                                    </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
                     </MDBNavbar>

@@ -10,6 +10,7 @@ const MyLog = () => {
             <h4> Submissions: </h4>
             <br/>
             <h6> Calculation 1: </h6>
+            <p> You chose activity: Running. And duration: 15 mins. You will burn 165 kcals</p>
             <br/>
             <h6> Calculation 2: </h6>
             <br/>
