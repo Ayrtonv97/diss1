@@ -86,7 +86,6 @@ export default function Icon() {
 
     return (
         <div>
-            <br/>
             <h4 style={text2}><Badge color="primary">1</Badge> Choose an activity</h4>
             <br/>
             <Button style={step1}

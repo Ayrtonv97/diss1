@@ -1,22 +1,30 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import radio from './nav.css';
 import Button from "@material-ui/core/Button";
+import {GiBananaBunch, GiChipsBag, GiChocolateBar} from "react-icons/gi";
+import {FaAppleAlt} from "react-icons/fa";
+import {Badge} from "reactstrap";
 
 const style = {
-    borderRadius: 2,
     color: 'white',
     fontSize: 17,
-    height: 48,
-    padding: '0 60px',
-    marginLeft: '20px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    border: '1px solid',
-    textAlign: 'left',
+    padding: '0 100px',
+    position: 'relative',
+    right: '400px',
 };
+const text2 = {
+    color: 'white',
+    fontFamily: 'Arial',
+    fontSize: 22,
+    textAlign: 'left',
+    marginRight: '100px'
+}
+const step2 = {
+    color: 'yellow',
+    fontSize: 70,
+    marginRight: '200px',
+}
+
 
 class TargetedActivity extends React.Component {
 
@@ -28,9 +36,7 @@ class TargetedActivity extends React.Component {
             foodValue: 0
         };
         this.msg = ""
-        this.publish = this.publish.bind(this);
-        this.formPreventDefault = this.formPreventDefault.bind(this);
-        this.foodValues = {"apple": 50, "marsbar": 228, "crisps": 184}
+        this.foodValues = {"apple": 50, "marsbar": 228, "crisps": 184, "banana": 105}
 
     }
 
@@ -44,29 +50,17 @@ class TargetedActivity extends React.Component {
 
     onRadioChange = (e) => {
         this.setState({
-                food: e.target.value,
-                foodValue: this.foodValues[e.target.value]
+                food: e,
+                foodValue: this.foodValues[e]
             },
         );
-
-
-        this.publish(this.state.targeted_cal, this.foodValues[e.target.value], e.target.value);
-
-
-    }
-
-    formPreventDefault(e) {
-        console.log('here');
-        e.preventDefault();
-        this.publish(this.state.targeted_cal, this.state.foodValue, this.state.food);
-        //prevents the form from submitting, which reloads the page. And passes in target value and the radio button.
+        this.publish(this.state.targeted_cal, this.foodValues[e], e);
     }
 
     publish(targeted_cal, foodValue, food) {
         let result = targeted_cal / foodValue;
         this.msg = "You would need to eat: " + result.toFixed(1) + " " + food;
         document.getElementById("message").innerText = this.msg;
-        console.log(targeted_cal, foodValue, food);
         // grabs the the three values to calculate what food needs to be consumed to 1 decimal place.
     }
 
@@ -74,53 +68,27 @@ class TargetedActivity extends React.Component {
         return (
             <div>
             <form className='targetedActivity' noValidate autoComplete="off" onSubmit={this.formPreventDefault}>
+                <h4 style={text2}><Badge color="primary">1</Badge> Enter Target Calories </h4>
                 <TextField style={style} id="standard-basic"
-                           name="targeted_cal"
+                           type="text"
                            label="Targeted Kcal"
                            placeholder="Enter Kcal here"
                            value={this.state.targeted_cal}
                            onChange={this.changeHandle}
                 />
-                <input
-                    type='submit'
-                    name="Check Cal"
-                />
                 <br/>
-
-                <Button style={style}
-                        onClick={() => foodChoiceChange('Mars Bar', foodCaloriesMap.marsbar)}><GiChocolateBar/></Button>
-                <Button style={style}
-                        onClick={() => foodChoiceChange('apple', foodCaloriesMap.apple)}><FaAppleAlt/></Button>
-                <Button style={style}
-                        onClick={() => foodChoiceChange('crisps',foodCaloriesMap.crisps)}><GiChipsBag/></Button>
-                <Button style={style}
-                        onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
-                <RadioGroup className={radio} name="food items">
-
-                    <FormControlLabel
-                        value="marsbar"
-                        control={<Radio/>}
-                        label="Mars bar"
-                        checked={this.state.food === "marsbar"}
-                        onChange={this.onRadioChange}
-                    />
-
-                    <FormControlLabel value="apple"
-                                      control={<Radio/>}
-                                      label="Apple"
-                                      checked={this.state.food === "apple"}
-                                      onChange={this.onRadioChange}
-                    />
-
-                    <FormControlLabel value="crisps"
-                                      control={<Radio/>}
-                                      label="Packet of Crisps"
-                                      checked={this.state.food === "crisps"}
-                                      onChange={this.onRadioChange}
-                    />
-                </RadioGroup>
+                <br/>
+                <h4 style={text2}><Badge color="primary">2 </Badge> Choose a snack </h4>
+                <Button style={step2}
+                        onClick={() => this.onRadioChange('marsbar', this.foodValues.marsbar)}><GiChocolateBar/></Button>
+                <Button style={step2}
+                        onClick={() => this.onRadioChange('apple', this.foodValues.apple)}><FaAppleAlt/></Button>
+                <Button style={step2}
+                        onClick={() => this.onRadioChange('crisps', this.foodValues.crisps)}><GiChipsBag/></Button>
+                <Button style={step2}
+                        onClick={() => this.onRadioChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
             </form>
-                <h3 id="message"> {this.msg}</h3>
+                <h4 style={text2} id="message"> {this.msg} <Badge color="primary">3</Badge>Results go here</h4>
             </div>
         )
     }

@@ -3,23 +3,28 @@ import {MdDirectionsWalk, MdDirectionsBike, MdDirectionsRun} from 'react-icons/m
 import {FaSwimmer, FaAppleAlt} from 'react-icons/fa';
 import {GiChocolateBar, GiBananaBunch, GiChipsBag} from 'react-icons/gi';
 import Button from '@material-ui/core/Button';
+import {Badge} from 'reactstrap';
 
 export default function Icon2() {
 
-    const style = {
-        borderRadius: 2,
-        border: '1px solid',
-        color: 'white',
-        fontSize: 22,
+    const step1 = {
+        color: 'indigo',
+        fontSize: 80,
         height: 48,
-        padding: '0 60px',
-        marginLeft: '20px',
-        hover: 'red',
-        outlineColor: 'blue',
-        outlineWidth: '2px',
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        label: 'mars bar'
+        marginRight: '200px',
     };
+    const step2 = {
+        color: 'yellow',
+        fontSize: 70,
+        marginRight: '200px',
+    }
+    const text2 = {
+        color: 'white',
+        fontFamily: 'Arial',
+        fontSize: 22,
+        textAlign: 'left',
+        marginRight: '100px'
+    }
 
     const walkingCalsPerMinute = 4
     const cyclingCalsPerMinute = 8
@@ -80,32 +85,30 @@ export default function Icon2() {
 
     return (
         <div>
-            <h5> This second calculation will provide the duration of the exercise you have to perform, in order to burn off your chosen food </h5>
+            <h4 style={text2}><Badge color="primary">1</Badge> Choose Activity</h4>
             <br/>
-
-            <h5> Step 1: Choose Activity</h5>
-            <Button style={style}
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
-            <Button style={style}
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Cycling)}><MdDirectionsBike/></Button>
-            <Button style={style}
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Running)}><MdDirectionsRun/></Button>
-            <Button style={style}
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
             <br/>
             <br/>
-            <h5> Step 2: Choose Food</h5>
-            <Button style={style}
+            <h4 style={text2}><Badge color="primary">2</Badge> Choose Food</h4>
+            <Button style={step2}
                     onClick={() => foodChoiceChange('Mars Bar', foodCaloriesMap.marsbar)}><GiChocolateBar/></Button>
-            <Button style={style}
+            <Button style={step2}
                     onClick={() => foodChoiceChange('apple', foodCaloriesMap.apple)}><FaAppleAlt/></Button>
-            <Button style={style}
+            <Button style={step2}
                     onClick={() => foodChoiceChange('crisps',foodCaloriesMap.crisps)}><GiChipsBag/></Button>
-            <Button style={style}
+            <Button style={step2}
                     onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
             <br/>
             <br/>
-            <h4 id="message">Results go here</h4>
+            <h4 style={text2} id="message"><Badge color="primary">3</Badge>Results go here</h4>
         </div>
     )
 };
