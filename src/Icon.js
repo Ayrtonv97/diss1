@@ -80,16 +80,23 @@ export default function Icon() {
         <div>
             <h4 style={text2}><Badge color="primary">1</Badge> Choose an activity</h4>
             <br/>
-            <div className="row">
-            <Button className="col" style={step1}
+            <div class="row">
+                <div class="col">
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Walking)}><MdDirectionsWalk/></Button>
-            <Button className="col" style={step1}
+                </div>
+                <div class="col">
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Cycling)}><MdDirectionsBike/></Button>
-
-            <Button className="col" style={step1}
+                </div>
+                <div class="col">
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Running)}><MdDirectionsRun/></Button>
-            <Button className="col" style={step1}
+                </div>
+                <div class="col">
+            <Button style={step1}
                     onClick={() => activityChange(activityEnum.Swimming)}><FaSwimmer/></Button>
+                </div>
             </div>
             <br/>
             <br/>
