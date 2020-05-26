@@ -31,7 +31,8 @@ export default function Icon() {
             flexDirection: 'row',
             flexWrap: 'nowrap',
             marginRight: 200,
-            horizontal: true
+            flex: 1,
+            width: 100
         };
 
     const walkingCalsPerMinute = 4
