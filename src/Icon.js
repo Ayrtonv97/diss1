@@ -28,8 +28,7 @@ export default function Icon() {
         const step1 = {
             color: 'indigo',
             fontSize: 70,
-            marginRight: 200,
-            flex: 1,
+            marginRight: '200px',
             justifyContent: 'center',
             alignItems: 'center'
         };

@@ -9,6 +9,8 @@ body {
   text-align: left;
   font-family: Arial;
   font-size: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 body {
