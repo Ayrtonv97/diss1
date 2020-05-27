@@ -1,22 +1,22 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 import {GiBananaBunch, GiChipsBag, GiChocolateBar} from "react-icons/gi";
 import {FaAppleAlt} from "react-icons/fa";
 import {Badge} from "reactstrap";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
 
 const style = {
     color: 'white',
     fontSize: 17,
-    padding: '0 100px',
-    position: 'absolute',
+    padding: '0 50px',
+    float: 'left'
 };
 const text2 = {
     color: 'white',
     fontFamily: 'Arial',
     fontSize: 22,
     textAlign: 'left',
-    marginRight: '100px'
 }
 const step2 = {
     color: 'yellow',
@@ -65,16 +65,16 @@ class TargetedActivity extends React.Component {
     render() {
         return (
             <div>
-            <div class='targetedActivity' noValidate autoComplete="off">
                 <h4 style={text2}><Badge color="primary">1</Badge> Enter Target Calories </h4>
-                <TextField style={style} id="standard-basic"
-                           type="text"
+                <InputLabel style={style}></InputLabel>
+                <Input style={style}
+                           id="standard-adornment"
                            class="col"
                            label="Targeted Kcal"
                            placeholder="Enter Kcal here"
                            value={this.state.targeted_cal}
                            onChange={this.changeHandle}
-                />
+                           />
                 <br/>
                 <br/>
                 <h4 style={text2}><Badge color="primary">2 </Badge> Choose a snack </h4>
@@ -96,7 +96,6 @@ class TargetedActivity extends React.Component {
                         onClick={() => this.onRadioChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
                     </div>
                 </div>
-            </div>
                 <h4 style={text2} id="message"> {this.msg} <Badge color="primary">3</Badge> Results go here</h4>
             </div>
         )

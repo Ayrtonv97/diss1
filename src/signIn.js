@@ -1,70 +1,34 @@
-import React, {useState} from "react";
-import blue from "@material-ui/core/colors/blue";
+import React, { Component } from "react";
 
-const SignIn = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const signing = {
+    color: 'white',
+}
 
-    const style = {
-        background: 'blue',
-        borderRadius: 3,
-        border: 0,
-        color: 'white',
-        fontSize: 18,
-        padding: '0 5px',
-        marginLeft: '20px',
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    };
-    const sign = {
-        border: '1px solid',
+export default class Login extends Component {
+    render() {
+        return (
+            <form>
+                <h2 style={signing}>Sign In</h2>
 
+                <div className="form-group">
+                    <label>Email address</label>
+                    <input type="email" className="form-control" placeholder="Enter email" />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Enter password" />
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    </div>
+                </div>
+
+                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+            </form>
+        );
     }
-
-    const onChangeHandler = (event) => {
-        const {name, value} = event.currentTarget;
-
-        if(name === 'userEmail') {
-            setEmail(value);
-        }
-        else if(name === 'userPassword'){
-            setPassword(value);
-        }
-    };
-
-    return (
-        <div>
-            <h1>Sign In</h1>
-            <div style={sign}>
-                <form className="">
-                    <label>
-                        Email:
-                    </label>
-                    <input
-                        type="email"
-                        name="userEmail"
-                        value = {email}
-                        placeholder="E.g: jmare@gmail.com"
-                        id="userEmail"
-                        onChange = {(event) => onChangeHandler(event)}
-                    />
-                    <label>
-                        Password:
-                    </label>
-                    <input
-                        type="password"
-                        name="userPassword"
-                        value = {password}
-                        placeholder="Your Password"
-                        id="userPassword"
-                        onChange = {(event) => onChangeHandler(event)}
-                    />
-                    <br/>
-                    <button style={style}>
-                        Sign in
-                    </button>
-                </form>
-            </div>
-        </div>
-    );
-};
-export default SignIn;
+}
