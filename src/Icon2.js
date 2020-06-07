@@ -8,11 +8,23 @@ import {Badge} from 'reactstrap';
 export default function Icon2() {
 
     const step1 = {
-        color: 'indigo',
+        color: 'white',
         fontSize: 70,
     };
-    const step2 = {
+    const chocolate = {
+        color: 'brown',
+        fontSize: 70,
+    }
+    const apple = {
+        color: 'green',
+        fontSize: 70,
+    }
+    const banana = {
         color: 'yellow',
+        fontSize: 70,
+    }
+    const crisps = {
+        color: 'blue',
         fontSize: 70,
     }
     const text2 = {
@@ -107,19 +119,19 @@ export default function Icon2() {
             <h4 style={text2}><Badge color="primary">2</Badge> Choose Food</h4>
             <div class='row'>
                 <div class='col'>
-            <Button style={step2}
+            <Button style={chocolate}
                     onClick={() => foodChoiceChange('Mars Bar', foodCaloriesMap.marsbar)}><GiChocolateBar/></Button>
                 </div>
                 <div class='col'>
-            <Button style={step2}
+            <Button style={apple}
                     onClick={() => foodChoiceChange('apple', foodCaloriesMap.apple)}><FaAppleAlt/></Button>
                 </div>
                 <div class='col'>
-            <Button style={step2}
+            <Button style={crisps}
                     onClick={() => foodChoiceChange('crisps',foodCaloriesMap.crisps)}><GiChipsBag/></Button>
                 </div>
                 <div class='col'>
-            <Button style={step2}
+            <Button style={banana}
                     onClick={() => foodChoiceChange('banana', foodCaloriesMap.banana)}><GiBananaBunch/></Button>
                 </div>
             </div>

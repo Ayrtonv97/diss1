@@ -18,8 +18,20 @@ const text2 = {
     fontSize: 22,
     textAlign: 'left',
 }
-const step2 = {
+const chocolate = {
+    color: 'brown',
+    fontSize: 70,
+}
+const apple = {
+    color: 'green',
+    fontSize: 70,
+}
+const banana = {
     color: 'yellow',
+    fontSize: 70,
+}
+const crisps = {
+    color: 'blue',
     fontSize: 70,
 }
 
@@ -59,7 +71,7 @@ class TargetedActivity extends React.Component {
         let result = targeted_cal / foodValue;
         this.msg = "You would need to eat: " + result.toFixed(1) + " " + food;
         document.getElementById("message").innerText = this.msg;
-        // grabs the the three values to calculate what food needs to be consumed to 1 decimal place.
+        // grabs the the two values to calculate what food needs to be consumed to 1 decimal place.
     }
 
     render() {
@@ -80,19 +92,19 @@ class TargetedActivity extends React.Component {
                 <h4 style={text2}><Badge color="primary">2 </Badge> Choose a snack </h4>
                 <div className='row'>
                     <div class='col'>
-                <Button style={step2}
+                <Button style={chocolate}
                         onClick={() => this.onRadioChange('marsbar', this.foodValues.marsbar)}><GiChocolateBar/></Button>
                     </div>
                     <div class='col'>
-                <Button style={step2}
+                <Button style={apple}
                         onClick={() => this.onRadioChange('apple', this.foodValues.apple)}><FaAppleAlt/></Button>
                     </div>
                     <div class='col'>
-                <Button style={step2}
+                <Button style={crisps}
                         onClick={() => this.onRadioChange('crisps', this.foodValues.crisps)}><GiChipsBag/></Button>
                     </div>
                     <div class='col'>
-                <Button style={step2}
+                <Button style={banana}
                         onClick={() => this.onRadioChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
                     </div>
                 </div>
