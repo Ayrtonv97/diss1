@@ -2,7 +2,7 @@ import React from 'react';
 import {Badge} from "reactstrap";
 
 const log = {
-    color: 'white',
+    color: 'black',
 }
 //coloured the text in white.
 

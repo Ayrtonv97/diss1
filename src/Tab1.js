@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
         return (
 
             <div className={classes.root}>
-                <AppBar style={{ background: '#0d47a1', marginTop: '20px' }} position="static">
+                <AppBar style={{ background: '#1565c0', marginTop: '20px' }} position="static">
 
                 <StyledTabs
                     value={value}
@@ -83,9 +83,9 @@ const useStyles = makeStyles(theme => ({
                     aria-label="full width tabs example"
                     variant="fullWidth"
                 >
-                    <Tab label="Find out how many kcals burnt after activity" {...a11yProps(0)} />
-                    <Tab label="Find out how long to do an exercise for after eating" {...a11yProps(1)} />
-                    <Tab label="Find out what to eat from your own targeted cal" {...a11yProps(2)} />
+                    <Tab label="Activity Energy Converter" {...a11yProps(0)} />
+                    <Tab label="Food Energy Converter" {...a11yProps(1)} />
+                    <Tab label="Targeted Calorie Aim" {...a11yProps(2)} />
                 </StyledTabs>
                 </AppBar>
                 <SwipeableViews

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const signing = {
-    color: 'white',
+    color: 'black',
 }
 
 export default class Login extends Component {

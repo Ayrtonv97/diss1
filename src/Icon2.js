@@ -8,7 +8,7 @@ import {Badge} from 'reactstrap';
 export default function Icon2() {
 
     const step1 = {
-        color: 'blue',
+        color: 'black',
         fontSize: 70,
     };
     const chocolate = {

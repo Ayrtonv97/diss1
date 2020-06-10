@@ -21,7 +21,7 @@ export default function Icon() {
         }
 
         const step1 = {
-            color: 'blue',
+            color: 'black',
             fontSize: 70,
         };
 
