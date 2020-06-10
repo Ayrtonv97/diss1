@@ -44,7 +44,7 @@ const StyledTabs = withStyles({
         background: 'transparent',
         '& > div': {maxWidth: 300,
             width: '100%',
-            backgroundColor: '#f59905'
+            backgroundColor: '#ff7043'
         },
     },
 })(props => <Tabs {...props} TabIndicatorProps={{children: <div/>}}/>);
@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
         return (
 
             <div className={classes.root}>
-                <AppBar style={{ background: '#8d8d8d', marginTop: '20px' }} position="static">
+                <AppBar style={{ background: '#0d47a1', marginTop: '20px' }} position="static">
 
                 <StyledTabs
                     value={value}

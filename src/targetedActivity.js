@@ -6,14 +6,16 @@ import {Badge} from "reactstrap";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 
+//important import statements that are to be implemented for this specific java file and third tab
+
 const style = {
-    color: 'white',
+    color: 'black',
     fontSize: 17,
     padding: '0 50px',
     float: 'left'
 };
 const text2 = {
-    color: 'white',
+    color: 'black',
     fontFamily: 'Arial',
     fontSize: 22,
     textAlign: 'left',
@@ -34,7 +36,7 @@ const crisps = {
     color: 'blue',
     fontSize: 70,
 }
-
+//specifying the type of css for different types of components such as the icon for banana, crisps, chocolate bar etc.
 
 class TargetedActivity extends React.Component {
 
@@ -47,6 +49,7 @@ class TargetedActivity extends React.Component {
         };
         this.msg = ""
         this.foodValues = {"apple": 50, "marsbar": 228, "crisps": 184, "banana": 105}
+        // specifying the food values, food and the targeted calories textfield.
 
     }
 
@@ -55,10 +58,11 @@ class TargetedActivity extends React.Component {
             targeted_cal: e.target.value
         })
     };
+    //grabs the value for the targeted calorie field
 
 
 
-    onRadioChange = (e) => {
+    onChange = (e) => {
         this.setState({
                 food: e,
                 foodValue: this.foodValues[e]
@@ -66,18 +70,19 @@ class TargetedActivity extends React.Component {
         );
         this.publish(this.state.targeted_cal, this.foodValues[e], e);
     }
+    // grabs the food and foodValue values which then calculates based on the targeted calorie value that was set by the user.
 
     publish(targeted_cal, foodValue, food) {
         let result = targeted_cal / foodValue;
         this.msg = "You would need to eat: " + result.toFixed(1) + " " + food;
         document.getElementById("message").innerText = this.msg;
-        // grabs the the two values to calculate what food needs to be consumed to 1 decimal place.
+        // grabs the the two values to calculate what food needs to be consumed to 1 decimal place by dividing the calorie text field and the foodvalue icon
     }
 
     render() {
         return (
             <div>
-                <h4 style={text2}><Badge color="primary">1</Badge> Enter Target Calories </h4>
+                <h4 style={text2}><Badge color="primary">1</Badge> Enter Target Calories for the day </h4>
                 <InputLabel style={style}></InputLabel>
                 <Input style={style}
                            id="standard-adornment"
@@ -93,19 +98,19 @@ class TargetedActivity extends React.Component {
                 <div className='row'>
                     <div class='col'>
                 <Button style={chocolate}
-                        onClick={() => this.onRadioChange('marsbar', this.foodValues.marsbar)}><GiChocolateBar/></Button>
+                        onClick={() => this.onChange('marsbar', this.foodValues.marsbar)}><GiChocolateBar/></Button>
                     </div>
                     <div class='col'>
                 <Button style={apple}
-                        onClick={() => this.onRadioChange('apple', this.foodValues.apple)}><FaAppleAlt/></Button>
+                        onClick={() => this.onChange('apple', this.foodValues.apple)}><FaAppleAlt/></Button>
                     </div>
                     <div class='col'>
                 <Button style={crisps}
-                        onClick={() => this.onRadioChange('crisps', this.foodValues.crisps)}><GiChipsBag/></Button>
+                        onClick={() => this.onChange('crisps', this.foodValues.crisps)}><GiChipsBag/></Button>
                     </div>
                     <div class='col'>
                 <Button style={banana}
-                        onClick={() => this.onRadioChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
+                        onClick={() => this.onChange('banana', this.foodValues.banana)}><GiBananaBunch/></Button>
                     </div>
                 </div>
                 <h4 style={text2} id="message"> {this.msg} <Badge color="primary">3</Badge> Results go here</h4>

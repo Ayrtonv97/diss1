@@ -8,20 +8,20 @@ import {Badge} from 'reactstrap';
 export default function Icon() {
 
         const text = {
-            color: 'white',
+            color: 'black',
             fontFamily: 'Arial',
             fontSize: 34,
         }
 
         const text2 = {
-            color: 'white',
+            color: 'black',
             fontFamily: 'Arial',
             fontSize: 22,
             textAlign: 'left',
         }
 
         const step1 = {
-            color: 'indigo',
+            color: 'blue',
             fontSize: 70,
         };
 

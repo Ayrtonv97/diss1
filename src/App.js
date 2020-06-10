@@ -1,8 +1,6 @@
 import React from 'react';
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import './App.css';
 import Navigation from "./Navigation/navigateBar";
-import Application from "./fireBaseApp";
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import SignIn from "./signIn";
 import Tab1 from "./Tab1";
@@ -24,4 +22,5 @@ function App() {
             </Router>
         );
 }
+// this is to route the signin, my log and help pages so that the user can interact with them.
 export default App;

@@ -4,6 +4,7 @@ import {Badge} from "reactstrap";
 const log = {
     color: 'white',
 }
+//coloured the text in white.
 
 const MyLog = () => {
     return (
@@ -26,5 +27,7 @@ const MyLog = () => {
         </div>
     );
 };
+
+//a hardcoded log of what the saved data would have looked like if the user were to save their calculations
 
 export default MyLog;
