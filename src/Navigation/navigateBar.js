@@ -24,7 +24,7 @@ class NavigateBar extends Component {
         return (
                     <MDBNavbar>
                             <MDBNavbarBrand>
-                                <FaCalculator/> Physical Activity Calorie Expenditure
+                                <FaCalculator/> Food Energy Equator
                             </MDBNavbarBrand>
                             <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
                             <MDBCollapse isOpen={this.state.collapse1} navbar>

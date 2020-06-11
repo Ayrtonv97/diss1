@@ -12,7 +12,6 @@ const MyLog = () => {
             <h1>My Log</h1>
             <br/>
             <p> Your calculated log is as follows - </p>
-
             <h4> Submissions: </h4>
             <br/>
             <h6> Calculation 1 (Tab 1): </h6>
