@@ -39,15 +39,15 @@ export default function Icon() {
             switch (activity) {
                 //Walking
                 case 1:
-                    msg = "For " + duration + " mins of Walking you will burn " + walkingCalsPerMinute * duration + "calories";
+                    msg = "For " + duration + " mins of Walking you will burn " + walkingCalsPerMinute * duration + " calories";
                     break;
                 //Running
                 case 2:
-                    msg = "For " + duration + " mins of Running you will burn " + runningCalsPerMinute * duration + "calories";
+                    msg = "For " + duration + " mins of Running you will burn " + runningCalsPerMinute * duration + " calories";
                     break;
                 //Swimming
                 case 3:
-                    msg = "For " + duration + " mins of Swimming you will burn " + swimmingCalsPerMinute * duration + "calories";
+                    msg = "For " + duration + " mins of Swimming you will burn " + swimmingCalsPerMinute * duration + " calories";
                     break;
                 //Cycling
                 case 4:
