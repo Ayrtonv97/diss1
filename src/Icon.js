@@ -29,6 +29,7 @@ export default function Icon() {
     const cyclingCalsPerMinute = 8
     const runningCalsPerMinute = 11
     const swimmingCalsPerMinute = 10
+    // values for calories burnt per minute
     const activityEnum = Object.freeze({"Walking": 1, "Running": 2, "Swimming": 3, "Cycling": 4})
     let msg = ""
     let duration = ""
@@ -64,13 +65,16 @@ export default function Icon() {
         activity = value;
         checkValues(activity, duration)
     }
+    // function for activity change
 
     function durationChange(value) {
         duration =  value;
         checkValues(activity, duration)
     }
+    // function for duration change
 
     return (
+        // Icons shown on the first page with onclick provided
         <div>
             <h4 style={text2}><Badge color="primary">1</Badge> Choose an activity</h4>
             <br/>
@@ -118,5 +122,6 @@ export default function Icon() {
             <br/>
             <h4 style={text2} id="message"><Badge color="primary">3</Badge> Results go here</h4>
         </div>
+        // The four buttons for the duration time for the second step and the result presented
     )
 };

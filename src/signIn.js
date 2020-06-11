@@ -4,6 +4,8 @@ const signing = {
     color: 'black',
 }
 
+// for the tutorial in how to design the sign in page is found here: https://www.positronx.io/build-react-login-sign-up-ui-template-with-bootstrap-4/
+
 export default class Login extends Component {
     render() {
         return (

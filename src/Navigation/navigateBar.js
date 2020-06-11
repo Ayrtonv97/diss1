@@ -3,6 +3,8 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCol
     MDBHamburgerToggler } from 'mdbreact';
 import {FaCalculator} from "react-icons/all";
 
+// tutorial found here for the development of the navbar https://mdbootstrap.com/docs/react/navigation/hamburger-menu/
+
 class NavigateBar extends Component {
     state = {
         collapse1: false,

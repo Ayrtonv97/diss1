@@ -117,5 +117,6 @@ class TargetedActivity extends React.Component {
             </div>
         )
     }
+    // this section covers the input for the text field and the four food items buttons that the user can choose from followed by the result message.
 };
 export default TargetedActivity;

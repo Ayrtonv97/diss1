@@ -10,8 +10,9 @@ import TargetedActivity from "./targetedActivity";
 import Icon from "./Icon";
 import Icon2 from "./Icon2";
 import AppBar from '@material-ui/core/AppBar';
-import tab from "./nav.css";
+import nav from "./nav.css";
 
+// the tutorial for the tab layout is found here https://material-ui.com/components/tabs/
 
 function TabPanel(props) {
     const {children, value, index,} = props;

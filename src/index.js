@@ -1,12 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Navigation from './Navigation/navigateBar';
 import * as serviceWorker from './serviceWorker';
-import ChangeTabs from './changeTab';
-import Tab1 from './Tab1';
-import SignIn from './signIn';
-import styles from './select.module.css';
 import './App.css'; //Import here your file styles
 import App from './App'
 import Icon from './Icon';
